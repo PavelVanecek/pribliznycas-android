@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Přibližný čas</string>
+    <string name="action_settings">Nastavení</string>
+    <string name="sometimes">někdy</string>
+    <string name="loading_time">Zjišťuji čas...</string>
+    <string name="morning">ráno</string>
+    <string name="night">noc</string>
+    <string name="beforenoon">dopoledne</string>
+    <string name="lunchtime">kolem oběda</string>
+    <string name="afternoon">odpoledne</string>
+    <string name="midnight">půlnoc</string>
+    <string name="hours_one">jedna</string>
+    <string name="hours_two">dvě</string>
+    <string name="hours_three">tři</string>
+    <string name="hours_four">čtyři</string>
+    <string name="hours_five">pět</string>
+    <string name="hours_six">šest</string>
+    <string name="hours_seven">sedm</string>
+    <string name="hours_eight">osm</string>
+    <string name="hours_nine">devět</string>
+    <string name="hours_ten">deset</string>
+    <string name="hours_eleven">jedenáct</string>
+    <string name="hours_noon">dvanáct</string>
+    <string name="full_and_a_little">celá a něco</string>
+    <string name="close_to_quarter_past">za chvíli čtvrt</string>
+    <string name="quarter_past">čtvrt</string>
+    <string name="after_quarter_past">po čtvrt</string>
+    <string name="almost_half">bude půl</string>
+    <string name="half">půl</string>
+    <string name="after_half">po půl</string>
+    <string name="almost_quarter_to">hnedle tři čtvrtě</string>
+    <string name="quarter_to">tři čtvrtě</string>
+    <string name="after_quarter_to">po tři čtvrtě</string>
+    <string name="almost_full">bude celá</string>
+    <string name="full">celá</string>
+    <string name="add_widget">Přidat widget</string>
+    <string name="prev"><![CDATA[<]]></string>
+    <string name="next"><![CDATA[>]]></string>
+
+</resources>

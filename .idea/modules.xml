@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/pribliznycas.iml" filepath="$PROJECT_DIR$/pribliznycas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pribliznycas/pribliznycas-pribliznycas.iml" filepath="$PROJECT_DIR$/pribliznycas/pribliznycas-pribliznycas.iml" />
+    </modules>
+  </component>
+</project>
+
