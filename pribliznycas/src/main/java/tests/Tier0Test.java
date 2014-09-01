@@ -1,14 +1,7 @@
 package tests;
 
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.test.AndroidTestCase;
-
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 import cz.corkscreewe.pribliznycas.app.R;
-import cz.corkscreewe.pribliznycas.app.tiers.Tier0;
+import cz.corkscreewe.pribliznycas.app.tier.Tier0;
 
 /**
  * Created by cork on 25.04.14.

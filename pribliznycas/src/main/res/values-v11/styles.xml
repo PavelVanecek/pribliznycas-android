@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseBasicButton">
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+    <style name="SingleText" parent="BasicText">
+        <item name="android:alpha">1</item>
+    </style>
+</resources>

@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:padding="@dimen/widget_margin"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1">
+        <Button
+            android:id="@+id/button_prev"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight=".5"
+            android:gravity="center_vertical|left"
+            android:clickable="true"
+            android:enabled="true"
+            android:textColor="#CCC"
+            android:background="#00000000" />
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight=".5"
+            android:gravity="center_vertical|right"
+            android:clickable="true"
+            android:enabled="true"
+            android:textColor="#CCC"
+            android:background="#000FF000" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/double_appwidget_text_up"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"
+        android:alpha="1"
+        android:contentDescription="@string/app_name"
+        android:enabled="false"
+        android:gravity="top|center_horizontal"
+        android:singleLine="false"
+        android:text="@string/loading_time"
+        android:textColor="#ffffff"
+        android:textSize="35sp"
+        android:textStyle="bold|italic"
+        android:shadowColor="#A0000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="3"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/double_appwidget_text_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"
+        android:alpha="1"
+        android:contentDescription="@string/app_name"
+        android:enabled="false"
+        android:gravity="bottom|center_horizontal"
+        android:singleLine="false"
+        android:text="@string/loading_time"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        android:shadowColor="#A0000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="3"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

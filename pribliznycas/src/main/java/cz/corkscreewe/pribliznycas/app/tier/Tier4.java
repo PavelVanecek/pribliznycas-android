@@ -1,11 +1,9 @@
-package cz.corkscreewe.pribliznycas.app.tiers;
+package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
-import android.util.Log;
 
 import java.util.Calendar;
 
-import cz.corkscreewe.pribliznycas.app.ITier;
 import cz.corkscreewe.pribliznycas.app.R;
 
 /**

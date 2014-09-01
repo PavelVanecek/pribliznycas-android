@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <PreferenceCategory android:title="@string/preference_font_family">
+        <ListPreference
+            android:key="fontFamily"
+            android:summary="@string/preference_font_summary"
+            android:title="@string/preference_font_title"
+            android:entries="@array/fontFamily"
+            android:entryValues="@array/fontFamilyValues">
+            </ListPreference>
+        <Preference
+            android:title="@string/preference_font_color_title"
+            android:key="preference_font_color_button_key"
+            android:summary="@string/preference_font_color_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preference_done_category_title">
+        <Preference
+            android:title="@string/preference_done_title"
+            android:key="preference_done_button_key"
+            android:summary="@string/preference_done_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

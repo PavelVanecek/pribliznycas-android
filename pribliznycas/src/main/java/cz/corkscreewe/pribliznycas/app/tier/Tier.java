@@ -1,4 +1,4 @@
-package cz.corkscreewe.pribliznycas.app;
+package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
 

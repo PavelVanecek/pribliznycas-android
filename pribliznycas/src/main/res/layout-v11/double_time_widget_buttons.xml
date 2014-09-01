@@ -5,6 +5,15 @@
     android:padding="@dimen/widget_margin"
     >
 
+    <TextView
+        android:id="@+id/double_appwidget_text_up"
+        style="@style/DoubleText.Up"
+         />
+    <TextView
+        android:id="@+id/double_appwidget_text_bottom"
+        style="@style/DoubleText.Bottom"
+        />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -13,7 +22,6 @@
             android:id="@+id/button_prev"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:text="@string/prev"
             android:layout_weight=".5"
             android:gravity="center_vertical|left"
             android:clickable="true"
@@ -26,7 +34,6 @@
             android:id="@+id/button_next"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:text="@string/next"
             android:layout_weight=".5"
             android:gravity="center_vertical|right"
             android:clickable="true"
@@ -34,27 +41,16 @@
             android:textColor="#CCC"
             style="?android:borderlessButtonStyle"
             />
-        </LinearLayout>
+    </LinearLayout>
+    <!--
 
-    <TextView
-        android:id="@+id/appwidget_text"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="8dp"
-        android:alpha="1"
-        android:contentDescription="@string/app_name"
-        android:enabled="false"
-        android:gravity="center_vertical|center_horizontal"
-        android:singleLine="false"
-        android:text="@string/loading_time"
-        android:textColor="#ffffff"
-        android:textSize="40sp"
-        android:textStyle="bold|italic"
-        android:shadowColor="#A0000000"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="3" />
+        <ImageButton
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:id="@+id/settingsButton"
+            android:layout_gravity="right|top"
+            android:background="#00000000"
+            android:src="@android:drawable/ic_menu_preferences" />
+    -->
 
 </RelativeLayout>

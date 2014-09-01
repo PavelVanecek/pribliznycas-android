@@ -7,7 +7,7 @@ import android.test.AndroidTestCase;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import cz.corkscreewe.pribliznycas.app.ITier;
+import cz.corkscreewe.pribliznycas.app.tier.ITier;
 
 /**
  * Created by cork on 25.04.14.

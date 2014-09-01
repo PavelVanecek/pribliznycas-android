@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:padding="@dimen/widget_margin"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1">
+        <Button
+            android:id="@+id/button_prev"
+            style="@style/LeftButton"
+            />
+
+        <Button
+            android:id="@+id/button_next"
+            style="@style/RightButton"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/double_appwidget_text_up"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"
+        android:alpha="1"
+        android:contentDescription="@string/app_name"
+        android:enabled="false"
+        android:gravity="top|center_horizontal"
+        android:singleLine="false"
+        android:text="@string/loading_time"
+        android:textColor="#00ffff"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        android:shadowColor="#A0000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="3"
+        android:lines="1" />
+    <TextView
+        android:id="@+id/double_appwidget_text_bottom"
+        style="@style/DoubleText.Bottom"
+        />
+    <!--
+
+        <ImageButton
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:id="@+id/settingsButton"
+            android:layout_gravity="right|top"
+            android:background="#00000000"
+            android:src="@android:drawable/ic_menu_preferences" />
+    -->
+
+</RelativeLayout>

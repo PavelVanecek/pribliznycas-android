@@ -1,10 +1,9 @@
-package cz.corkscreewe.pribliznycas.app.tiers;
+package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
 
 import java.util.Calendar;
 
-import cz.corkscreewe.pribliznycas.app.ITier;
 import cz.corkscreewe.pribliznycas.app.R;
 
 /**
@@ -12,7 +11,7 @@ import cz.corkscreewe.pribliznycas.app.R;
  */
 public class Tier5 implements ITier {
 
-    private int[] arr = {
+    protected static final int[] HOURS = {
             R.string.midnight,
             R.string.hours_one,
             R.string.hours_two,
@@ -46,6 +45,6 @@ public class Tier5 implements ITier {
         if (minutes > 45) {
             hours = (hours + 1) % 24;
         }
-        return res.getString(arr[hours]);
+        return res.getString(HOURS[hours]);
     }
 }

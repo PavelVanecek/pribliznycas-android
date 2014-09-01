@@ -1,7 +1,6 @@
 package tests;
 
-import cz.corkscreewe.pribliznycas.app.R;
-import cz.corkscreewe.pribliznycas.app.tiers.Tier1;
+import cz.corkscreewe.pribliznycas.app.tier.Tier1;
 
 /**
  * Created by cork on 25.04.14.

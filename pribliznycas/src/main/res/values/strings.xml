@@ -4,7 +4,7 @@
     <string name="app_name">Přibližný čas</string>
     <string name="action_settings">Nastavení</string>
     <string name="sometimes">někdy</string>
-    <string name="loading_time">Zjišťuji čas...</string>
+    <string name="loading_time">Zjišťuji čas…</string>
     <string name="morning">ráno</string>
     <string name="night">noc</string>
     <string name="beforenoon">dopoledne</string>
@@ -37,10 +37,6 @@
     <string name="almost_full">bude celá</string>
     <string name="full">celá</string>
     <string name="add_widget">Přidat widget</string>
-    <!--<string name="prev"><![CDATA[<]]></string>-->
-    <string name="prev"></string>
-    <!--<string name="next"><![CDATA[>]]></string>-->
-    <string name="next"></string>
     <string name="january">leden</string>
     <string name="february">únor</string>
     <string name="march">březen</string>
@@ -61,6 +57,47 @@
     <string name="friday">pátek</string>
     <string name="saturday">sobota</string>
     <string name="sunday">neděle</string>
+    <string name="preference_font_family">Písmo</string>
+    <string name="preference_done_title">Uložit</string>
+    <string name="preference_done_summary">Přibližné nastavení je kompletní</string>
+    <string name="preference_font_summary">Font widgetu</string>
+    <string name="preference_font_title">Font</string>
+    <string name="preference_done_category_title">Hotovo</string>
+    <string name="preference_font_color_title">Barva</string>
+    <string name="preference_font_color_summary">Barva textu ve widgetu</string>
+    <string name="dialog_pick_color_ok">OK</string>
+    <string name="dialog_pick_color_cancel">Zrušit</string>
+    <string name="btn_desc_less_precise">, chci to méně přesně</string>
+    <string name="btn_desc_more_precise">, chci to přesněji</string>
+    <string name="half_to_twelve">dvanácté</string>
+    <string name="half_to_one">jedné</string>
+    <string name="half_to_two">druhé</string>
+    <string name="half_to_three">třetí</string>
+    <string name="half_to_four">čtvrté</string>
+    <string name="half_to_five">páté</string>
+    <string name="half_to_six">šesté</string>
+    <string name="half_to_seven">sedmé</string>
+    <string name="half_to_eight">osmé</string>
+    <string name="half_to_nine">deváté</string>
+    <string name="half_to_ten">desáté</string>
+    <string name="half_to_eleven">jedenácté</string>
+    <string name="double_widget_name">Přibližně dvakrát čas</string>
+    <plurals name="it_was_">
+        <item quantity="one">byla</item>
+        <item quantity="two">byly</item>
+        <item quantity="few">byly</item>
+        <item quantity="other">bylo</item>
+    </plurals>
+    <string name="quarter_">čtvrt</string>
+    <string name="to__">na\u00A0</string>
+    <string name="half_to">půl</string>
+    <string name="three_quarters_">tři čtvrtě</string>
+    <plurals name="soon_hour_">
+        <item quantity="one">bude</item>
+        <item quantity="two">budou</item>
+        <item quantity="few">budou</item>
+        <item quantity="other">bude</item>
+    </plurals>
 
     <!--<string name="app_name">Approximate time</string>-->
     <!--<string name="action_settings">Settings</string>-->
@@ -98,7 +135,5 @@
     <!--<string name="full">o\'clock</string>-->
     <!--<string name="appwidget_text">EXAMPLE</string>-->
     <!--<string name="add_widget">Add widget</string>-->
-    <!--<string name="prev"><![CDATA[<]]></string>-->
-    <!--<string name="next"><![CDATA[>]]></string>-->
 
 </resources>

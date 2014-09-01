@@ -2,8 +2,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="false"
-    android:padding="@dimen/widget_margin"
     >
+
+    <LinearLayout
+        style="@style/KeyguardDoubleLayout"
+        >
+
+        <TextView
+            android:id="@+id/double_appwidget_text_up"
+            style="@style/KeyguardText.Up"
+            />
+
+        <TextView
+            android:id="@+id/double_appwidget_text_bottom"
+            style="@style/KeyguardText.Bottom"
+            />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -12,17 +26,12 @@
         <Button
             android:id="@+id/button_prev"
             style="@style/LeftButton"
-         />
+            />
 
         <Button
             android:id="@+id/button_next"
             style="@style/RightButton"
-        />
+            />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/appwidget_text"
-        style="@style/KeyguardText"
-    />
 
 </RelativeLayout>
