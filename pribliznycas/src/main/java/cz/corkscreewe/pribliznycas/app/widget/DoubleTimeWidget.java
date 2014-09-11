@@ -19,10 +19,14 @@ public class DoubleTimeWidget extends TimeWidget {
     @Override
     protected String setText(RemoteViews remoteViews, Bundle intentExtras) {
         String[] times = intentExtras.getStringArray(DoubleTimeService.DOUBLE_TIME_EXTRA);
-        Log.i("double widget", times[0] + ", " + times[1]);
-        remoteViews.setTextViewText(R.id.double_appwidget_text_up, times[0]);
-        remoteViews.setTextViewText(R.id.double_appwidget_text_bottom, times[1]);
-        return times[0] + " " + times[1];
+        if (times != null && times.length == 2) {
+            Log.i("double widget", times[0] + ", " + times[1]);
+            remoteViews.setTextViewText(R.id.double_appwidget_text_up, times[0]);
+            remoteViews.setTextViewText(R.id.double_appwidget_text_bottom, times[1]);
+            return times[0] + " " + times[1];
+        } else {
+            return null;
+        }
     }
 
     @Override

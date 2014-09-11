@@ -18,8 +18,10 @@ public class SingleTimeWidget extends TimeWidget {
     @Override
     protected String setText(RemoteViews remoteViews, Bundle intentExtras) {
         String time = intentExtras.getString("time");
-        Log.i("single widget", time);
-        remoteViews.setTextViewText(R.id.appwidget_text, time);
+        if (time != null) {
+            Log.i("single widget", time);
+            remoteViews.setTextViewText(R.id.appwidget_text, time);
+        }
         return time;
     }
 
