@@ -36,7 +36,7 @@ public class Tier5 implements ITier {
             R.string.hours_nine,
             R.string.hours_ten,
             R.string.hours_eleven,
-            R.string.hours_noon
+            R.string.midnight
     };
 
     @Override

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Přibližný čas</string>
     <string name="action_settings">Nastavení</string>
     <string name="sometimes">někdy</string>
@@ -81,18 +80,14 @@
     <string name="half_to_ten">desáté</string>
     <string name="half_to_eleven">jedenácté</string>
     <string name="double_widget_name">Přibližně dvakrát čas</string>
-    <plurals name="it_was_">
-        <item quantity="one">byla</item>
-        <item quantity="few">byly</item>
-        <item quantity="other">bylo</item>
-    </plurals>
+    <string name="it_was_one">byla</string>
+    <string name="it_was_few">byly</string>
+    <string name="it_was_other">bylo</string>
     <string name="quarter_">čtvrt</string>
     <string name="to__">na\u00A0</string>
     <string name="half_to">půl</string>
     <string name="three_quarters_">tři čtvrtě</string>
-    <plurals name="soon_hour_">
-        <item quantity="one">bude</item>
-        <item quantity="few">budou</item>
-        <item quantity="other">bude</item>
-    </plurals>
+    <string name="soon_hour_one">bude</string>
+    <string name="soon_hour_few">budou</string>
+    <string name="soon_hour_other">bude</string>
 </resources>

@@ -80,18 +80,14 @@
     <string name="half_to_ten">desiatej</string>
     <string name="half_to_eleven">jedenástej</string>
     <string name="double_widget_name">Približne dvakrát čas</string>
-    <plurals name="it_was_">
-        <item quantity="one">bolo</item>
-        <item quantity="few">boli</item>
-        <item quantity="other">bolo</item>
-    </plurals>
+    <string name="it_was_one">bolo</string>
+    <string name="it_was_few">boli</string>
+    <string name="it_was_other">bolo</string>
     <string name="quarter_">štvrť</string>
     <string name="to__">na\u00A0</string>
     <string name="half_to">pol</string>
     <string name="three_quarters_">tri štvrte</string>
-    <plurals name="soon_hour_">
-        <item quantity="one">bude</item>
-        <item quantity="few">budú</item>
-        <item quantity="other">bude</item>
-    </plurals>
+    <string name="soon_hour_one">bude</string>
+    <string name="soon_hour_few">budú</string>
+    <string name="soon_hour_other">bude</string>
 </resources>

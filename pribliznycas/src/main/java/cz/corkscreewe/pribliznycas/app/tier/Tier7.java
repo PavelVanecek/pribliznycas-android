@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import java.util.Calendar;
 
 import cz.corkscreewe.pribliznycas.app.R;
+import cz.corkscreewe.pribliznycas.app.helpers.MyTranslator;
 
 /**
  * Created by cork on 27.05.14.
@@ -46,7 +47,7 @@ public class Tier7 implements IDoubleTier {
         int minutes = c.get(Calendar.MINUTE);
         String[] doubleApproxTime = new String[2];
         if (minutes <= 8) {
-            doubleApproxTime[0] = res.getQuantityString(R.plurals.it_was_, hours);
+            doubleApproxTime[0] = MyTranslator.getHoursItWas(res, hours);
             doubleApproxTime[1] = res.getString(hours_str[hours]);
         } else if (minutes <= 21) {
             doubleApproxTime[0] = res.getString(R.string.quarter_);
@@ -58,7 +59,7 @@ public class Tier7 implements IDoubleTier {
             doubleApproxTime[0] = res.getString(R.string.three_quarters_);
             doubleApproxTime[1] = res.getString(R.string.to__) + res.getString(hours_str[hours + 1]);
         } else /* if (minutes > 51 && minutes < 8) */ {
-            doubleApproxTime[0] = res.getQuantityString(R.plurals.soon_hour_, hours + 1);
+            doubleApproxTime[0] = MyTranslator.getHoursSoon(res, hours + 1);
             doubleApproxTime[1] = res.getString(hours_str[hours + 1]);
         }
         return doubleApproxTime;
