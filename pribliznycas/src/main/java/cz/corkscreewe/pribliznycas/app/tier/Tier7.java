@@ -42,11 +42,11 @@ public class Tier7 implements IDoubleTier {
 
     @Override
     public String[] getDoubleApproxTime(Calendar c, Resources res) {
-        int hours = c.get(Calendar.HOUR_OF_DAY);
+        int hours = c.get(Calendar.HOUR_OF_DAY); // 0 - indexed
         int minutes = c.get(Calendar.MINUTE);
         String[] doubleApproxTime = new String[2];
         if (minutes <= 8) {
-            doubleApproxTime[0] = res.getQuantityString(R.plurals.it_was_, 3);
+            doubleApproxTime[0] = res.getQuantityString(R.plurals.it_was_, hours);
             doubleApproxTime[1] = res.getString(hours_str[hours]);
         } else if (minutes <= 21) {
             doubleApproxTime[0] = res.getString(R.string.quarter_);
