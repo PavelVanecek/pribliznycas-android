@@ -1,5 +1,6 @@
 package cz.corkscreewe.pribliznycas.app.widget;
 
+import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -42,7 +43,12 @@ public abstract class TimeWidget extends AppWidgetProvider {
         intentFilter.addAction(Intent.ACTION_TIME_CHANGED);
         intentFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
         intentFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
-        context.getApplicationContext().registerReceiver(this, intentFilter);
+        Context applicationContext = context.getApplicationContext();
+        if (applicationContext != null) {
+            applicationContext.registerReceiver(this, intentFilter);
+        } else {
+            Log.wtf("applicationContext", "is null and should not be null");
+        }
         Log.d("widget", "registering receiver");
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -69,10 +75,25 @@ public abstract class TimeWidget extends AppWidgetProvider {
     }
 
     private RemoteViews setupWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
-        boolean isKeyguard = false;
-
         // it might happen that the widget is running on keyguard screen
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) { // 16
+        boolean isKeyguard = isKeyguard(appWidgetManager, appWidgetId);
+        if (isKeyguard) {
+            return setupKeyguardWidgetIntents(context, appWidgetId);
+        } else {
+            return setupHomescreenWidgetIntents(context, appWidgetId);
+        }
+    }
+
+    /**
+     * @param appWidgetManager
+     * @param appWidgetId
+     * @return
+     */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    @SuppressWarnings("InlinedApi, NewApi")
+    private boolean isKeyguard(AppWidgetManager appWidgetManager, int appWidgetId) {
+        boolean isKeyguard = false;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) { // 17
             Bundle appWidgetOptions = appWidgetManager.getAppWidgetOptions(appWidgetId);
             int category = appWidgetOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_HOST_CATEGORY);
             if (category == AppWidgetProviderInfo.WIDGET_CATEGORY_KEYGUARD) {
@@ -80,11 +101,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
             }
         }
         Log.d("isKeyguard", String.valueOf(isKeyguard));
-        if (isKeyguard) {
-            return setupKeyguardWidgetIntents(context, appWidgetId);
-        } else {
-            return setupHomescreenWidgetIntents(context, appWidgetId);
-        }
+        return isKeyguard;
     }
 
     private RemoteViews setupWidgetBase(Context context, int appWidgetId, int templateId) {
@@ -174,10 +191,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
                     ) {
                         RemoteViews remoteViews = setupWidget(context, manager, appWidgetId);
                         String time = setText(remoteViews, extras);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) { // 15
-                            remoteViews.setContentDescription(R.id.button_prev, time + context.getString(R.string.btn_desc_less_precise));
-                            remoteViews.setContentDescription(R.id.button_next, time + context.getString(R.string.btn_desc_more_precise));
-                        }
+                        setContentDescription(context, remoteViews, time);
                         // this will read aloud every update every minute;
 //                        AccessibilityManager accessibilityManager = (AccessibilityManager) context.getSystemService(Context.ACCESSIBILITY_SERVICE);
 //                        if (accessibilityManager.isEnabled()) {
@@ -207,6 +221,20 @@ public abstract class TimeWidget extends AppWidgetProvider {
             startServices(context, appWidgetIds);
         }
         super.onReceive(context, intent);
+    }
+
+    /**
+     *
+     * @param context
+     * @param remoteViews
+     * @param time
+     */
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
+    private void setContentDescription(Context context, RemoteViews remoteViews, String time) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) { // 15
+            remoteViews.setContentDescription(R.id.button_prev, time + context.getString(R.string.btn_desc_less_precise));
+            remoteViews.setContentDescription(R.id.button_next, time + context.getString(R.string.btn_desc_more_precise));
+        }
     }
 
     private int[] getAppWidgetIds(Context context, AppWidgetManager manager) {

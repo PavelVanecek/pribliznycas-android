@@ -36,7 +36,6 @@
     <string name="after_quarter_to">po tři čtvrtě</string>
     <string name="almost_full">bude celá</string>
     <string name="full">celá</string>
-    <string name="add_widget">Přidat widget</string>
     <string name="january">leden</string>
     <string name="february">únor</string>
     <string name="march">březen</string>
@@ -84,7 +83,6 @@
     <string name="double_widget_name">Přibližně dvakrát čas</string>
     <plurals name="it_was_">
         <item quantity="one">byla</item>
-        <item quantity="two">byly</item>
         <item quantity="few">byly</item>
         <item quantity="other">bylo</item>
     </plurals>
@@ -94,46 +92,7 @@
     <string name="three_quarters_">tři čtvrtě</string>
     <plurals name="soon_hour_">
         <item quantity="one">bude</item>
-        <item quantity="two">budou</item>
         <item quantity="few">budou</item>
         <item quantity="other">bude</item>
     </plurals>
-
-    <!--<string name="app_name">Approximate time</string>-->
-    <!--<string name="action_settings">Settings</string>-->
-    <!--<string name="sometimes">sometimes</string>-->
-    <!--<string name="loading_time">Fetching time...</string>-->
-    <!--<string name="morning">morning</string>-->
-    <!--<string name="night">night</string>-->
-    <!--<string name="beforenoon">morning</string>-->
-    <!--<string name="lunchtime">lunchtime</string>-->
-    <!--<string name="afternoon">afternoon</string>-->
-    <!--<string name="midnight">midnight</string>-->
-    <!--<string name="hours_one">one</string>-->
-    <!--<string name="hours_two">two</string>-->
-    <!--<string name="hours_three">three</string>-->
-    <!--<string name="hours_four">four</string>-->
-    <!--<string name="hours_five">five</string>-->
-    <!--<string name="hours_six">six</string>-->
-    <!--<string name="hours_seven">seven</string>-->
-    <!--<string name="hours_eight">eight</string>-->
-    <!--<string name="hours_nine">nine</string>-->
-    <!--<string name="hours_ten">ten</string>-->
-    <!--<string name="hours_eleven">eleven</string>-->
-    <!--<string name="hours_noon">noon</string>-->
-    <!--<string name="full_and_a_little">past o\'clock</string>-->
-    <!--<string name="close_to_quarter_past">almost quarter past</string>-->
-    <!--<string name="quarter_past">quarter past</string>-->
-    <!--<string name="after_quarter_past">past quarter past</string>-->
-    <!--<string name="almost_half">almost half</string>-->
-    <!--<string name="half">half</string>-->
-    <!--<string name="after_half">past half</string>-->
-    <!--<string name="almost_quarter_to">almost quarter to</string>-->
-    <!--<string name="quarter_to">quarter to</string>-->
-    <!--<string name="after_quarter_to">past quarter to</string>-->
-    <!--<string name="almost_full">almost o\'clock</string>-->
-    <!--<string name="full">o\'clock</string>-->
-    <!--<string name="appwidget_text">EXAMPLE</string>-->
-    <!--<string name="add_widget">Add widget</string>-->
-
 </resources>

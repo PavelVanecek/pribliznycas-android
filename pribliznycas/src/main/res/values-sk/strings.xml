@@ -35,7 +35,6 @@
     <string name="after_quarter_to">bolo trištvrte</string>
     <string name="almost_full">bude celá</string>
     <string name="full">celá</string>
-    <string name="add_widget">Pridať widget</string>
     <string name="january">január</string>
     <string name="february">február</string>
     <string name="march">marec</string>
@@ -69,4 +68,30 @@
     <string name="btn_desc_less_precise">, chcem to menej presne</string>
     <string name="btn_desc_more_precise">, chcem to presnejšie</string>
     <string name="half_to_twelve">dvanástej</string>
+    <string name="half_to_one">jednej</string>
+    <string name="half_to_two">druhej</string>
+    <string name="half_to_three">tretej</string>
+    <string name="half_to_four">štvrtej</string>
+    <string name="half_to_five">piatej</string>
+    <string name="half_to_six">šiestej</string>
+    <string name="half_to_seven">siedmej</string>
+    <string name="half_to_eight">ôsmej</string>
+    <string name="half_to_nine">deviatej</string>
+    <string name="half_to_ten">desiatej</string>
+    <string name="half_to_eleven">jedenástej</string>
+    <string name="double_widget_name">Približne dvakrát čas</string>
+    <plurals name="it_was_">
+        <item quantity="one">bolo</item>
+        <item quantity="few">boli</item>
+        <item quantity="other">bolo</item>
+    </plurals>
+    <string name="quarter_">štvrť</string>
+    <string name="to__">na\u00A0</string>
+    <string name="half_to">pol</string>
+    <string name="three_quarters_">tri štvrte</string>
+    <plurals name="soon_hour_">
+        <item quantity="one">bude</item>
+        <item quantity="few">budú</item>
+        <item quantity="other">bude</item>
+    </plurals>
 </resources>
