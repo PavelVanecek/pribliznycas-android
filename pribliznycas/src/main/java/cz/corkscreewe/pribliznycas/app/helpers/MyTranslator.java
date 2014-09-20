@@ -16,7 +16,7 @@ public class MyTranslator {
 
     private static OPTS decide(int hours) {
         int hoursMod = hours % 12;
-        if (hoursMod == 1 || hours == 0) {
+        if (hoursMod == 1) {
             return OPTS.ONE;
         } else if (1 < hoursMod && hoursMod < 5) {
             return OPTS.FEW;
