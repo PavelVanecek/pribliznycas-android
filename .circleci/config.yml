@@ -40,4 +40,9 @@ jobs:
         
       - run: ./gradlew build
 
+      - run: mkdir -p $CIRCLE_TEST_REPORTS/junit/
+      - run: find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+      - store_test_results:
+          path: $CIRCLE_TEST_REPORTS/junit/
+
       - run: ./gradlew assemble
