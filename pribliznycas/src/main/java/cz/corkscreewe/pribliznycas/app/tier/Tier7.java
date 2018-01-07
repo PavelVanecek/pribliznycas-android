@@ -12,9 +12,9 @@ import cz.corkscreewe.pribliznycas.app.helpers.MyTranslator;
  */
 public class Tier7 implements IDoubleTier {
 
-    protected static final int[] hours_str = Tier5.HOURS;
+    private static final int[] hours_str = Tier5.HOURS;
 
-    protected static final int[] quarter_hours = {
+    private static final int[] quarter_hours = {
             R.string.midnight,
             R.string.quarter_to_one,
             R.string.hours_two,
@@ -42,7 +42,7 @@ public class Tier7 implements IDoubleTier {
             R.string.midnight
     };
 
-    protected static final int[] half_hours = {
+    private static final int[] half_hours = {
             R.string.half_to_twelve,
             R.string.half_to_one,
             R.string.half_to_two,

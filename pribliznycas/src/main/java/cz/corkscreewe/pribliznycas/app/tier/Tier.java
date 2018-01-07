@@ -10,7 +10,7 @@ import java.util.Calendar;
  */
 public abstract class Tier implements ITier {
 
-    protected SimpleDateFormat dateFormat;
+    SimpleDateFormat dateFormat;
 
     @Override
     public String getApproxTime(Calendar c, Resources res) {

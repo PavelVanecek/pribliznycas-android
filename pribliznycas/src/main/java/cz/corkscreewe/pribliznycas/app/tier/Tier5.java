@@ -11,7 +11,7 @@ import cz.corkscreewe.pribliznycas.app.R;
  */
 public class Tier5 implements ITier {
 
-    protected static final int[] HOURS = {
+    static final int[] HOURS = {
             R.string.midnight,
             R.string.hours_one,
             R.string.hours_two,

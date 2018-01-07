@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Približný čas</string>
-    <string name="action_settings">Nastavenia</string>
     <string name="sometimes">niekedy</string>
     <string name="loading_time">Zisťujem čas…</string>
     <string name="morning">ráno</string>
@@ -55,16 +54,6 @@
     <string name="friday">piatok</string>
     <string name="saturday">sobota</string>
     <string name="sunday">nedeľa</string>
-    <string name="preference_font_family">Písmo</string>
-    <string name="preference_done_title">Uložiť</string>
-    <string name="preference_done_summary">Približné nastavenie je kompletné</string>
-    <string name="preference_font_summary">Font widgetu</string>
-    <string name="preference_font_title">Font</string>
-    <string name="preference_done_category_title">Hotovo</string>
-    <string name="preference_font_color_title">Farba</string>
-    <string name="preference_font_color_summary">Farba textu vo widgete</string>
-    <string name="dialog_pick_color_ok">OK</string>
-    <string name="dialog_pick_color_cancel">Zrušiť</string>
     <string name="btn_desc_less_precise">, chcem to menej presne</string>
     <string name="btn_desc_more_precise">, chcem to presnejšie</string>
     <string name="half_to_twelve">dvanástej</string>

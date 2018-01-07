@@ -8,6 +8,6 @@ import java.util.Calendar;
  */
 public interface IDoubleTier {
 
-    public String[] getDoubleApproxTime(Calendar c, Resources res);
+    String[] getDoubleApproxTime(Calendar c, Resources res);
 
 }

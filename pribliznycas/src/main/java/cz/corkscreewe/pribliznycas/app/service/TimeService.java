@@ -41,7 +41,7 @@ public abstract class TimeService extends Service {
                 AppWidgetManager widgetManager = AppWidgetManager.getInstance(this);
                 ComponentName componentName = getComponentName();
                 int[] appWidgetIds = widgetManager.getAppWidgetIds(componentName);
-                Log.i("time service widget ids:", Arrays.toString(appWidgetIds));
+                Log.i("time service widgets:", Arrays.toString(appWidgetIds));
                 Log.i("time service class", this.getClass().getName());
                 for (int fetchedAppWidgetId : appWidgetIds) {
                     sendRefresh(fetchedAppWidgetId);
@@ -65,7 +65,7 @@ public abstract class TimeService extends Service {
      * Refreshes one single widget
      * @param appWidgetId widget ID or AppWidgetManager.INVALID_APPWIDGET_ID
      */
-    protected void sendRefresh(int appWidgetId) {
+    void sendRefresh(int appWidgetId) {
         int activeTier = getActiveTier(appWidgetId);
         Intent intent = new Intent(ACTION_TIME_CHANGE);
         intent.putExtra("tier", getDefaultTier());
@@ -80,14 +80,12 @@ public abstract class TimeService extends Service {
      * @param appWidgetId
      * @return
      */
-    public int getActiveTier(int appWidgetId) {
+    private int getActiveTier(int appWidgetId) {
         SharedPreferences sharedPreferences = getSharedPreferences(ACTIVE_TIERS_PREFERENCE, 0);
-        int tier = sharedPreferences.getInt(String.valueOf(appWidgetId), DEFAULT_TIER);
-//        Log.d("tier", "active tier for widget " + appWidgetId + " is " + tier);
-        return tier;
+        return sharedPreferences.getInt(String.valueOf(appWidgetId), DEFAULT_TIER);
     }
 
-    public void setTier(int tier, int appWidgetId) {
+    private void setTier(int tier, int appWidgetId) {
         int maxTier = getMaxTier();
         if (tier >= 0 && tier <= maxTier) {
             Log.d("tier", "setting widget " + appWidgetId + " to tier " + tier);

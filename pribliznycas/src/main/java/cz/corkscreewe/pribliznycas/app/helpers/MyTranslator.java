@@ -1,7 +1,6 @@
 package cz.corkscreewe.pribliznycas.app.helpers;
 
 import android.content.res.Resources;
-import android.util.Log;
 
 import cz.corkscreewe.pribliznycas.app.R;
 
@@ -10,11 +9,15 @@ import cz.corkscreewe.pribliznycas.app.R;
  */
 public class MyTranslator {
 
-    private static enum OPTS {
+    private enum OPTS {
         ONE, FEW, OTHER
     }
 
     private static OPTS decide(int hours) {
+        if (hours == 0 || hours == 24) {
+            // hotfix for "bylo půlnoc" -> "byla půlnoc"
+            return OPTS.ONE;
+        }
         int hoursMod = hours % 12;
         if (hoursMod == 1) {
             return OPTS.ONE;

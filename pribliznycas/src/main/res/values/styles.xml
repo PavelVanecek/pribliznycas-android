@@ -56,8 +56,6 @@
 
     <style name="SingleText" parent="BasicText"></style>
 
-    <style name="DoubleText" parent="BasicText"></style>
-
     <style name="KeyguardText" parent="SingleText">
         <item name="android:textSize">40sp</item>
         <item name="android:layout_weight">1</item>
