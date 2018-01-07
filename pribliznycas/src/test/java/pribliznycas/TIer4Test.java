@@ -1,25 +1,31 @@
 package pribliznycas;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import cz.corkscreewe.pribliznycas.app.R;
 import cz.corkscreewe.pribliznycas.app.tier.Tier4;
 
 import static junit.framework.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 /**
  * Created by cork on 25.04.14.
  */
 public class TIer4Test extends TierTestCase {
 
-    @Override
-    protected void setUp() throws Exception {
+    @Before
+    public void setUp() throws Exception {
         super.setUp();
         instance = new Tier4();
+        when(res.getString(R.string.afternoon))
+                .thenReturn("odpoledne");
     }
 
     @Test
     public void testGetApproxTime() throws Exception {
-        assertEquals(res.getString(R.string.afternoon), instance.getApproxTime(c, res));
+        String expected = "odpoledne";
+        String actual = instance.getApproxTime(c, res);
+        assertEquals(expected, actual);
     }
 }

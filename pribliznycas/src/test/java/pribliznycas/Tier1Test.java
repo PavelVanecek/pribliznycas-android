@@ -1,23 +1,24 @@
 package pribliznycas;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import cz.corkscreewe.pribliznycas.app.tier.Tier1;
 
 import static junit.framework.Assert.assertEquals;
 
-/**
- * Created by cork on 25.04.14.
- */
 public class Tier1Test extends TierTestCase {
 
-    protected void setUp() throws Exception {
+    @Before
+    public void setUp() throws Exception {
         super.setUp();
         instance = new Tier1();
     }
 
     @Test
     public void testGetApproxTime() throws Exception {
-        assertEquals("2014", instance.getApproxTime(c, res));
+        String actual = instance.getApproxTime(c, res);
+        String expected = "2014";
+        assertEquals(expected, actual);
     }
 }

@@ -2,18 +2,20 @@ package pribliznycas;
 
 import android.content.res.Resources;
 
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import cz.corkscreewe.pribliznycas.app.tier.ITier;
 
-/**
- * Created by cork on 25.04.14.
- */
+@RunWith(MockitoJUnitRunner.class)
 public abstract class TierTestCase {
 
     ITier instance;
-    Resources res;
+    @Mock Resources res;
     Calendar c;
 
     protected void setUp() throws Exception {
