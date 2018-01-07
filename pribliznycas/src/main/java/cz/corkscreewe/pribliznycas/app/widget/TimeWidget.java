@@ -43,6 +43,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
         intentFilter.addAction(Intent.ACTION_TIME_CHANGED);
         intentFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
         intentFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
+        intentFilter.addAction(Intent.ACTION_SCREEN_ON);
         Context applicationContext = context.getApplicationContext();
         if (applicationContext != null) {
             applicationContext.registerReceiver(this, intentFilter);
@@ -55,7 +56,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
         PendingIntent pendingIntent = getAlarmPendingIntent(context);
         alarmManager.cancel(pendingIntent);
         alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime(), 1000 * 60, pendingIntent);
-//        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime(), 1000, pendingIntent);
         Log.d("widget", "registering alarm");
 
         super.onUpdate(context, appWidgetManager, appWidgetIds);
