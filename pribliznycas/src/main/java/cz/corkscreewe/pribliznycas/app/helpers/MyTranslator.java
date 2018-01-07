@@ -15,6 +15,10 @@ public class MyTranslator {
     }
 
     private static OPTS decide(int hours) {
+        if (hours == 0 || hours == 24) {
+            // hotfix for "bylo půlnoc" -> "byla půlnoc"
+            return OPTS.ONE;
+        }
         int hoursMod = hours % 12;
         if (hoursMod == 1) {
             return OPTS.ONE;
