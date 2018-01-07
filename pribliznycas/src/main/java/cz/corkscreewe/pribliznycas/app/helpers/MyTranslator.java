@@ -1,7 +1,6 @@
 package cz.corkscreewe.pribliznycas.app.helpers;
 
 import android.content.res.Resources;
-import android.util.Log;
 
 import cz.corkscreewe.pribliznycas.app.R;
 
@@ -10,7 +9,7 @@ import cz.corkscreewe.pribliznycas.app.R;
  */
 public class MyTranslator {
 
-    private static enum OPTS {
+    private enum OPTS {
         ONE, FEW, OTHER
     }
 

@@ -9,7 +9,6 @@ import android.widget.RemoteViews;
 
 import cz.corkscreewe.pribliznycas.app.R;
 import cz.corkscreewe.pribliznycas.app.service.DoubleTimeService;
-import cz.corkscreewe.pribliznycas.app.service.SingleTimeService;
 
 /**
  * Created by cork on 29.05.14.

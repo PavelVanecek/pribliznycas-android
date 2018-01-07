@@ -18,7 +18,7 @@ public abstract class TierTestCase {
     @Mock Resources res;
     Calendar c;
 
-    protected void setUp() throws Exception {
+    void setUp() throws Exception {
         this.c = new GregorianCalendar(2014, 2, 28, 13, 25, 56);
     }
 

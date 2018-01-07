@@ -19,10 +19,9 @@ public class DoubleTier implements IDoubleTier {
 
     @Override
     public String[] getDoubleApproxTime(Calendar c, Resources res) {
-        String[] doubleApproxTime = {
+        return new String[]{
                 upTier.getApproxTime(c, res),
                 downTier.getApproxTime(c, res)
         };
-        return doubleApproxTime;
     }
 }

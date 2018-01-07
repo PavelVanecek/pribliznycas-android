@@ -1,13 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="fontFamily" translatable="false">
-        <item name="normal">Droid Sans</item>
-        <item name="serif">Droid Serif</item>
-        <item name="mono">Droid Mono</item>
-    </string-array>
-    <string-array name="fontFamilyValues" translatable="false">
-        <item name="normal">normal</item>
-        <item name="serif">serif</item>
-        <item name="mono">mono</item>
-    </string-array>
-</resources>
+<resources></resources>

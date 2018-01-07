@@ -32,7 +32,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
     protected abstract int getKeyguardLayoutId();
     protected abstract Intent getServiceIntent(Context context, int appWidgetId);
 
-    private List<PendingIntent> intents = new ArrayList<PendingIntent>();
+    private List<PendingIntent> intents = new ArrayList<>();
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {

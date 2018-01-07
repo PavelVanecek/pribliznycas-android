@@ -9,6 +9,6 @@ import java.util.Calendar;
  */
 public interface ITier {
 
-    public String getApproxTime(Calendar c, Resources res);
+    String getApproxTime(Calendar c, Resources res);
 
 }
