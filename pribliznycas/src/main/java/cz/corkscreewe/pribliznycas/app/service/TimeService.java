@@ -75,11 +75,6 @@ public abstract class TimeService extends Service {
         Log.d("service", "sending refresh broadcast to widget id " + appWidgetId);
     }
 
-    /**
-     *
-     * @param appWidgetId
-     * @return
-     */
     private int getActiveTier(int appWidgetId) {
         SharedPreferences sharedPreferences = getSharedPreferences(ACTIVE_TIERS_PREFERENCE, 0);
         return sharedPreferences.getInt(String.valueOf(appWidgetId), DEFAULT_TIER);

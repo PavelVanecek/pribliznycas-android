@@ -10,7 +10,7 @@ import cz.corkscreewe.pribliznycas.app.R;
  * Created by cork on 25.04.14.
  */
 public class Tier2 implements ITier {
-    private int[] arr = {
+    private final int[] arr = {
             R.string.january,
             R.string.february,
             R.string.march,

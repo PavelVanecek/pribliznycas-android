@@ -9,8 +9,8 @@ import java.util.Calendar;
  */
 public class DoubleTier implements IDoubleTier {
 
-    private ITier upTier;
-    private ITier downTier;
+    private final ITier upTier;
+    private final ITier downTier;
 
     public DoubleTier(ITier upTier, ITier downTier) {
         this.upTier = upTier;
