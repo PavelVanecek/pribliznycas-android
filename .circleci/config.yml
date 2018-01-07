@@ -31,15 +31,13 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: gradle dependencies
+      - run: ./gradlew androidDependencies
 
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
         
-      - run: gradle build
+      - run: ./gradlew build
 
-
-
-
+      - run: ./gradlew assemble
