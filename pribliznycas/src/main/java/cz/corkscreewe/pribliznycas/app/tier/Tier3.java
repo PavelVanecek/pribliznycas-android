@@ -11,7 +11,7 @@ import cz.corkscreewe.pribliznycas.app.R;
  */
 public class Tier3 extends Tier {
 
-    private int[] arr = {
+    private final int[] arr = {
             -1,
             R.string.sunday,
             R.string.monday,

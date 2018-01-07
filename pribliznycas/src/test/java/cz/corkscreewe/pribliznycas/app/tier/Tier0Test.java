@@ -1,10 +1,9 @@
-package pribliznycas;
+package cz.corkscreewe.pribliznycas.app.tier;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import cz.corkscreewe.pribliznycas.app.R;
-import cz.corkscreewe.pribliznycas.app.tier.Tier2;
 
 import static junit.framework.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -12,19 +11,19 @@ import static org.mockito.Mockito.when;
 /**
  * Created by cork on 25.04.14.
  */
-public class Tier2Test extends TierTestCase {
+public class Tier0Test extends TierTestCase {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         super.setUp();
-        instance = new Tier2();
-        when(res.getString(R.string.march))
-                .thenReturn("Brezen");
+        this.instance = new Tier0();
+        when(res.getString(R.string.sometimes))
+                .thenReturn("nekdy");
     }
 
     @Test
     public void testGetApproxTime() throws Exception {
-        String expected = "Brezen";
+        String expected = "nekdy";
         String actual = instance.getApproxTime(c, res);
         assertEquals(expected, actual);
     }

@@ -80,4 +80,25 @@
     <string name="soon_hour_few">budou</string>
     <string name="soon_hour_other">bude</string>
     <string name="quarter_to_one">jednu</string>
+    <string name="month_1">prvního</string>
+    <string name="month_2">druhého</string>
+    <string name="month_3">třetího</string>
+    <string name="month_4">čtvrtého</string>
+    <string name="month_5">pátého</string>
+    <string name="month_6">šestého</string>
+    <string name="month_7">sedmého</string>
+    <string name="month_8">osmého</string>
+    <string name="month_9">devátého</string>
+    <string name="month_10">desátého</string>
+    <string name="month_11">jedenáctého</string>
+    <string name="month_12">dvanáctého</string>
+    <string name="month_13">třináctého</string>
+    <string name="month_14">čtvrnáctého</string>
+    <string name="month_15">patnáctého</string>
+    <string name="month_16">šestnáctého</string>
+    <string name="month_17">sedmnáctého</string>
+    <string name="month_18">osmnáctého</string>
+    <string name="month_19">devatenáctého</string>
+    <string name="month_20">dvacátého</string>
+    <string name="month_30">třicátého</string>
 </resources>

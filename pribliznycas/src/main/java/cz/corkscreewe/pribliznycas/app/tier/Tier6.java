@@ -11,7 +11,7 @@ import cz.corkscreewe.pribliznycas.app.R;
  */
 public class Tier6 implements ITier {
 
-    private int[] arr = {
+    private final int[] arr = {
             R.string.full_and_a_little,
             R.string.close_to_quarter_past,
             R.string.quarter_past,

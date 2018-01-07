@@ -1,16 +1,14 @@
-package pribliznycas;
+package cz.corkscreewe.pribliznycas.app.tier;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import cz.corkscreewe.pribliznycas.app.tier.Tier1;
 
 import static junit.framework.Assert.assertEquals;
 
 public class Tier1Test extends TierTestCase {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         super.setUp();
         instance = new Tier1();
     }

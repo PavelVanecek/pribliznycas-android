@@ -1,10 +1,9 @@
-package pribliznycas;
+package cz.corkscreewe.pribliznycas.app.tier;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import cz.corkscreewe.pribliznycas.app.R;
-import cz.corkscreewe.pribliznycas.app.tier.Tier5;
 
 import static junit.framework.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -15,7 +14,7 @@ import static org.mockito.Mockito.when;
 public class Tier5Test extends TierTestCase {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         super.setUp();
         instance = new Tier5();
         when(res.getString(R.string.hours_one))

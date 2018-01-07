@@ -16,9 +16,6 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import cz.corkscreewe.pribliznycas.app.R;
 import cz.corkscreewe.pribliznycas.app.service.TimeService;
 
@@ -32,14 +29,12 @@ public abstract class TimeWidget extends AppWidgetProvider {
     protected abstract int getKeyguardLayoutId();
     protected abstract Intent getServiceIntent(Context context, int appWidgetId);
 
-    private List<PendingIntent> intents = new ArrayList<>();
-
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         startServices(context, appWidgetIds);
 
         IntentFilter intentFilter = new IntentFilter();
-//        intentFilter.addAction(Intent.ACTION_TIME_TICK);
+        intentFilter.addAction(Intent.ACTION_TIME_TICK);
         intentFilter.addAction(Intent.ACTION_TIME_CHANGED);
         intentFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
         intentFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
@@ -84,11 +79,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
         }
     }
 
-    /**
-     * @param appWidgetManager
-     * @param appWidgetId
-     * @return
-     */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @SuppressWarnings("InlinedApi, NewApi")
     private boolean isKeyguard(AppWidgetManager appWidgetManager, int appWidgetId) {
@@ -122,19 +112,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
         remoteViews.setOnClickPendingIntent(R.id.button_next, nextPendingIntent);
         remoteViews.setOnClickPendingIntent(R.id.button_prev, prevPendingIntent);
 
-//        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-//        int color = defaultSharedPreferences.getInt("preference_font_color_button_key", Color.WHITE);
-//        remoteViews.setTextColor(R.id.appwidget_text, color);
-
-        return remoteViews;
-    }
-
-    private RemoteViews setupPreferenceButton(Context context, int appWidgetId, RemoteViews remoteViews) {
-//        Intent preferenceIntent = new Intent(context, TimeWidgetConfiguration.class);
-//        preferenceIntent.setAction("preference " + appWidgetId);
-//        preferenceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-//        PendingIntent preferencePendingIntent = PendingIntent.getActivity(context, appWidgetId, preferenceIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-//        remoteViews.setOnClickPendingIntent(R.id.settingsButton, preferencePendingIntent);
         return remoteViews;
     }
 
@@ -146,7 +123,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
     private RemoteViews setupHomescreenWidgetIntents(Context context, int appWidgetId) {
         int layoutId = getHomescreenLayoutId();
         RemoteViews remoteViews = setupWidgetBase(context, appWidgetId, layoutId);
-        return setupPreferenceButton(context, appWidgetId, remoteViews);
+        return remoteViews;
     }
 
     @Override
@@ -223,12 +200,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
         super.onReceive(context, intent);
     }
 
-    /**
-     *
-     * @param context
-     * @param remoteViews
-     * @param time
-     */
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
     private void setContentDescription(Context context, RemoteViews remoteViews, String time) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) { // 15

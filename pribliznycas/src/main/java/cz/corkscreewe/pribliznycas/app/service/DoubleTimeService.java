@@ -13,6 +13,7 @@ import cz.corkscreewe.pribliznycas.app.tier.IDoubleTier;
 import cz.corkscreewe.pribliznycas.app.tier.Tier0;
 import cz.corkscreewe.pribliznycas.app.tier.Tier1;
 import cz.corkscreewe.pribliznycas.app.tier.Tier2;
+import cz.corkscreewe.pribliznycas.app.tier.Tier25;
 import cz.corkscreewe.pribliznycas.app.tier.Tier3;
 import cz.corkscreewe.pribliznycas.app.tier.Tier4;
 import cz.corkscreewe.pribliznycas.app.tier.Tier5;
@@ -26,9 +27,11 @@ public class DoubleTimeService extends TimeService {
 
     public static final String DOUBLE_TIME_EXTRA = "doubletime";
 
-    private IDoubleTier[] tiers = {
+    private final IDoubleTier[] tiers = {
             new DoubleTier(new Tier0(), new Tier1()),
             new DoubleTier(new Tier2(), new Tier1()),
+            new DoubleTier(new Tier2(), new Tier25()),
+            new DoubleTier(new Tier25(), new Tier3()),
             new DoubleTier(new Tier2(), new Tier3()),
             new DoubleTier(new Tier3(), new Tier4()),
             new DoubleTier(new Tier5(), new Tier4()),
