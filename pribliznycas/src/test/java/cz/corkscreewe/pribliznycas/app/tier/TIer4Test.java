@@ -28,5 +28,3 @@ public class TIer4Test extends TierTestCase {
         assertEquals(expected, actual);
     }
 }
-
-class ShouldNotHappenException extends RuntimeException {}
