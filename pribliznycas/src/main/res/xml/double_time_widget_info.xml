@@ -6,8 +6,6 @@
     android:previewImage="@drawable/priblizne_dvakrat_cas"
     android:initialLayout="@layout/double_time_widget_buttons"
     android:resizeMode="vertical|horizontal"
-    android:widgetCategory="home_screen|keyguard"
-    android:initialKeyguardLayout="@layout/double_time_widget_keyguard"
     >
     <!--android:configure="cz.corkscreewe.pribliznycas.app.TimeWidgetConfiguration"-->
 </appwidget-provider>
