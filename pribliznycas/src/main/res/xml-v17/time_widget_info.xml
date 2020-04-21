@@ -6,6 +6,8 @@
     android:previewImage="@drawable/example_appwidget_preview"
     android:initialLayout="@layout/single_time_widget"
     android:resizeMode="vertical|horizontal"
+    android:widgetCategory="home_screen|keyguard"
+    android:initialKeyguardLayout="@layout/time_widget_keyguard"
     >
     <!--android:configure="cz.corkscreewe.pribliznycas.app.TimeWidgetConfiguration"-->
 </appwidget-provider>

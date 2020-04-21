@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cz.corkscreewe.pribliznycas.app"
-    >
+    package="cz.corkscreewe.pribliznycas.app">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
@@ -9,45 +8,39 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        >
-
+        android:theme="@style/AppTheme">
         <receiver
             android:name=".widget.DoubleTimeWidget"
             android:label="@string/double_widget_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="cz.corkscreewe.pribliznycas.TIME_CHANGE_ACTION" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/double_time_widget_info" />
         </receiver>
-        
         <receiver
             android:name=".widget.SingleTimeWidget"
-            android:label="@string/app_name"
-            >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="cz.corkscreewe.pribliznycas.TIME_CHANGE_ACTION" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/time_widget_info" />
         </receiver>
-
-        <service android:name=".service.SingleTimeService" android:exported="false" android:enabled="true" />
-        <service android:name=".service.DoubleTimeService" android:exported="false" android:enabled="true" />
-
     </application>
 
 </manifest>

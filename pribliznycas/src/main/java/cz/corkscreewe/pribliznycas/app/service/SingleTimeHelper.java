@@ -20,13 +20,13 @@ import cz.corkscreewe.pribliznycas.app.widget.SingleTimeWidget;
 /**
  * Created by cork on 29.05.14.
  */
-public class SingleTimeService extends TimeService {
+public class SingleTimeHelper extends TimeHelper {
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d("single time service", "onStartCommand");
-        return super.onStartCommand(intent, flags, startId);
-    }
+//    @Override
+//    public int onStartCommand(Intent intent, int flags, int startId) {
+//        Log.d("single time service", "onStartCommand");
+//        return super.onStartCommand(intent, flags, startId);
+//    }
 
     private final ITier[] tiers = {
             new Tier0(),
@@ -49,21 +49,21 @@ public class SingleTimeService extends TimeService {
         return tiers.length - 1;
     }
 
-    protected ComponentName getComponentName() {
-        return new ComponentName(this, SingleTimeWidget.class);
-    }
+//    protected ComponentName getComponentName() {
+//        return new ComponentName(this, SingleTimeWidget.class);
+//    }
 
-    @Override
-    protected void sendRefresh(int appWidgetId) {
-        Log.i("single time service", "sendRefresh");
-        super.sendRefresh(appWidgetId);
-    }
+//    @Override
+//    protected void sendRefresh(int appWidgetId) {
+//        Log.i("single time service", "sendRefresh");
+//        super.sendRefresh(appWidgetId);
+//    }
 
-    @Override
-    protected void augmentIntent(Intent intent, int activeTier) {
-        Log.d("single time augment", "trying to fetch string for tier " + activeTier);
-        Calendar c = new GregorianCalendar();
-        Resources res = getApplicationContext().getResources();
-        intent.putExtra("time", tiers[activeTier].getApproxTime(c, res));
-    }
+//    @Override
+//    protected void augmentIntent(Intent intent, int activeTier) {
+//        Log.d("single time augment", "trying to fetch string for tier " + activeTier);
+//        Calendar c = new GregorianCalendar();
+//        Resources res = getApplicationContext().getResources();
+//        intent.putExtra("time", tiers[activeTier].getApproxTime(c, res));
+//    }
 }

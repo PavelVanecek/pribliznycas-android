@@ -23,7 +23,7 @@ import cz.corkscreewe.pribliznycas.app.widget.DoubleTimeWidget;
 /**
  * Created by cork on 29.05.14.
  */
-public class DoubleTimeService extends TimeService {
+public class DoubleTimeHelper extends TimeHelper {
 
     public static final String DOUBLE_TIME_EXTRA = "doubletime";
 
@@ -38,11 +38,11 @@ public class DoubleTimeService extends TimeService {
             new Tier7()
     };
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d("double time service", "onStartCommand");
-        return super.onStartCommand(intent, flags, startId);
-    }
+//    @Override
+//    public int onStartCommand(Intent intent, int flags, int startId) {
+//        Log.d("double time service", "onStartCommand");
+//        return super.onStartCommand(intent, flags, startId);
+//    }
 
     @Override
     protected int getDefaultTier() {
@@ -54,21 +54,21 @@ public class DoubleTimeService extends TimeService {
         return tiers.length - 1;
     }
 
-    @Override
-    protected void augmentIntent(Intent intent, int activeTier) {
-        Log.d("double time augment", "trying to fetch string for tier " + activeTier);
-        Calendar c = new GregorianCalendar();
-        Resources res = getApplicationContext().getResources();
-        intent.putExtra(DOUBLE_TIME_EXTRA, tiers[activeTier].getDoubleApproxTime(c, res));
-    }
+//    @Override
+//    protected void augmentIntent(Intent intent, int activeTier) {
+//        Log.d("double time augment", "trying to fetch string for tier " + activeTier);
+//        Calendar c = new GregorianCalendar();
+//        Resources res = getApplicationContext().getResources();
+//        intent.putExtra(DOUBLE_TIME_EXTRA, tiers[activeTier].getDoubleApproxTime(c, res));
+//    }
 
-    @Override
-    protected void sendRefresh(int appWidgetId) {
-        super.sendRefresh(appWidgetId);
-    }
+//    @Override
+//    protected void sendRefresh(int appWidgetId) {
+//        super.sendRefresh(appWidgetId);
+//    }
 
-    @Override
-    protected ComponentName getComponentName() {
-        return new ComponentName(this, DoubleTimeWidget.class);
-    }
+//    @Override
+//    protected ComponentName getComponentName() {
+//        return new ComponentName(DoubleTimeHelper.class);
+//    }
 }
