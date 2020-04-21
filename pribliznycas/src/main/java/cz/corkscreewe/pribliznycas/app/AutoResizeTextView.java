@@ -42,7 +42,7 @@ public class AutoResizeTextView extends TextView {
     private static final float MIN_TEXT_SIZE = 20;
 
     // Interface for resize notifications
-    public interface OnTextResizeListener {
+    interface OnTextResizeListener {
         void onTextResize(TextView textView, float oldSize, float newSize);
     }
 
@@ -235,6 +235,7 @@ public class AutoResizeTextView extends TextView {
      * @param width
      * @param height
      */
+    @SuppressLint("SetTextI18n")
     private void resizeText(int width, int height) {
         CharSequence text = getText();
         // Do not resize if the view does not have dimensions or there is no text

@@ -1,6 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import java.util.Calendar;
 
@@ -26,8 +27,9 @@ public class Tier6 implements ITier {
             R.string.full
     };
 
+    @NonNull
     @Override
-    public String getApproxTime(Calendar c, Resources res) {
+    public String getApproxTime(@NonNull Calendar c, @NonNull Resources res) {
         float length = arr.length;
         float minutes = c.get(Calendar.MINUTE);
         int index = (int) (((minutes / 60) * length) - 0.5);

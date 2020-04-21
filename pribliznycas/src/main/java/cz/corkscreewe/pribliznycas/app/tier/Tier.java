@@ -1,6 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -13,7 +14,7 @@ public abstract class Tier implements ITier {
     SimpleDateFormat dateFormat;
 
     @Override
-    public String getApproxTime(Calendar c, Resources res) {
+    public String getApproxTime(@NonNull Calendar c, Resources res) {
         return dateFormat.format(c.getTime());
     }
 

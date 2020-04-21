@@ -5,45 +5,43 @@
     android:padding="@dimen/widget_margin"
     >
 
+    <TextView
+        android:id="@+id/double_appwidget_text_up"
+        style="@style/DoubleText.Up"
+         />
+    <TextView
+        android:id="@+id/double_appwidget_text_bottom"
+        style="@style/DoubleText.Bottom"
+        />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:weightSum="1">
         <Button
             android:id="@+id/button_prev"
-            style="@style/LeftButton"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight=".5"
+            android:gravity="center_vertical|left"
+            android:clickable="true"
+            android:enabled="true"
+            android:textColor="#CCC"
+            style="?android:borderlessButtonStyle"
             />
 
         <Button
             android:id="@+id/button_next"
-            style="@style/RightButton"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight=".5"
+            android:gravity="center_vertical|right"
+            android:clickable="true"
+            android:enabled="true"
+            android:textColor="#CCC"
+            style="?android:borderlessButtonStyle"
             />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/double_appwidget_text_up"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="8dp"
-        android:contentDescription="@string/app_name"
-        android:enabled="false"
-        android:gravity="top|center_horizontal"
-        android:singleLine="false"
-        android:text="@string/loading_time"
-        android:textColor="#00ffff"
-        android:textSize="15sp"
-        android:textStyle="bold|italic"
-        android:shadowColor="#A0000000"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="3"
-        android:lines="1" />
-    <TextView
-        android:id="@+id/double_appwidget_text_bottom"
-        style="@style/DoubleText.Bottom"
-        />
     <!--
 
         <ImageButton

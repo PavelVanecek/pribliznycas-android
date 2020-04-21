@@ -14,7 +14,7 @@ public class Tier1Test extends TierTestCase {
     }
 
     @Test
-    public void testGetApproxTime() throws Exception {
+    public void testGetApproxTime() {
         String actual = instance.getApproxTime(c, res);
         String expected = "2014";
         assertEquals(expected, actual);

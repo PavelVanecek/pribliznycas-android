@@ -1,6 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import java.util.Calendar;
 
@@ -70,8 +71,9 @@ public class Tier7 implements IDoubleTier {
             R.string.half_to_twelve
     };
 
+    @NonNull
     @Override
-    public String[] getDoubleApproxTime(Calendar c, Resources res) {
+    public String[] getDoubleApproxTime(@NonNull Calendar c, @NonNull Resources res) {
         int hours = c.get(Calendar.HOUR_OF_DAY); // 0 - indexed
         int minutes = c.get(Calendar.MINUTE);
         String[] doubleApproxTime = new String[2];

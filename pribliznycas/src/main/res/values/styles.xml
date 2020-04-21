@@ -12,9 +12,7 @@
         <item name="android:weightSum">2</item>
     </style>
 
-    <style name="BaseBasicButton">
-        <item name="android:background">#00000000</item>
-    </style>
+    <style name="BaseBasicButton" />
 
     <style name="BasicButton" parent="BaseBasicButton">
         <item name="android:layout_width">0dip</item>
@@ -54,7 +52,7 @@
         <item name="android:lines">1</item>
     </style>
 
-    <style name="SingleText" parent="BasicText"></style>
+    <style name="SingleText" parent="BasicText" />
 
     <style name="KeyguardText" parent="SingleText">
         <item name="android:textSize">40sp</item>

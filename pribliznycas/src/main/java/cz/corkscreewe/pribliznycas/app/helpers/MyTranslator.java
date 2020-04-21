@@ -1,6 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.helpers;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import cz.corkscreewe.pribliznycas.app.R;
 
@@ -13,6 +14,7 @@ public class MyTranslator {
         ONE, FEW, OTHER
     }
 
+    @NonNull
     private static OPTS decide(int hours) {
         if (hours == 0 || hours == 24) {
             // hotfix for "bylo půlnoc" -> "byla půlnoc"
@@ -34,7 +36,8 @@ public class MyTranslator {
      * @param hours
      * @return
      */
-    public static String getHoursSoon(Resources res, int hours) {
+    @NonNull
+    public static String getHoursSoon(@NonNull Resources res, int hours) {
         OPTS decision = decide(hours);
         int resourceId;
         switch (decision) {
@@ -45,8 +48,6 @@ public class MyTranslator {
                 resourceId = R.string.soon_hour_few;
                 break;
             case OTHER:
-                resourceId = R.string.soon_hour_other;
-                break;
             default:
                 resourceId = R.string.soon_hour_other;
         }
@@ -59,7 +60,8 @@ public class MyTranslator {
      * @param hours
      * @return
      */
-    public static String getHoursItWas(Resources res, int hours) {
+    @NonNull
+    public static String getHoursItWas(@NonNull Resources res, int hours) {
         OPTS decision = decide(hours);
         int resourceId;
         switch (decision) {
@@ -70,8 +72,6 @@ public class MyTranslator {
                 resourceId = R.string.it_was_few;
                 break;
             case OTHER:
-                resourceId = R.string.it_was_other;
-                break;
             default:
                 resourceId = R.string.it_was_other;
         }

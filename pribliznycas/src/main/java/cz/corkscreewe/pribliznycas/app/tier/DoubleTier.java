@@ -1,6 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import java.util.Calendar;
 
@@ -17,6 +18,7 @@ public class DoubleTier implements IDoubleTier {
         this.downTier = downTier;
     }
 
+    @NonNull
     @Override
     public String[] getDoubleApproxTime(Calendar c, Resources res) {
         return new String[]{

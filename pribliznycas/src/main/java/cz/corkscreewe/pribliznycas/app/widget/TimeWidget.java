@@ -12,6 +12,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -40,7 +41,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
     private static final String ACTIVE_TIERS_PREFERENCE = "cz.corkscreewe.pribliznycas.ACTIVE_TIERS_PREFERENCE";
 
     @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+    public void onUpdate(@NonNull Context context, AppWidgetManager appWidgetManager, @NonNull int[] appWidgetIds) {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_TIME_TICK);
         intentFilter.addAction(Intent.ACTION_TIME_CHANGED);
@@ -70,7 +71,8 @@ public abstract class TimeWidget extends AppWidgetProvider {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
     }
 
-    private RemoteViews setupWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
+    @NonNull
+    private RemoteViews setupWidget(@NonNull Context context, @NonNull AppWidgetManager appWidgetManager, int appWidgetId) {
         // it might happen that the widget is running on keyguard screen
         boolean isKeyguard = isKeyguard(appWidgetManager, appWidgetId);
         if (isKeyguard) {
@@ -82,7 +84,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @SuppressWarnings("InlinedApi, NewApi")
-    private boolean isKeyguard(AppWidgetManager appWidgetManager, int appWidgetId) {
+    private boolean isKeyguard(@NonNull AppWidgetManager appWidgetManager, int appWidgetId) {
         boolean isKeyguard = false;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) { // 17
             Bundle appWidgetOptions = appWidgetManager.getAppWidgetOptions(appWidgetId);
@@ -95,7 +97,8 @@ public abstract class TimeWidget extends AppWidgetProvider {
         return isKeyguard;
     }
 
-    private RemoteViews setupWidgetBase(Context context, int appWidgetId, int templateId) {
+    @NonNull
+    private RemoteViews setupWidgetBase(@NonNull Context context, int appWidgetId, int templateId) {
         Log.d("widget", "setupWidgetBase");
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), templateId);
 
@@ -115,12 +118,14 @@ public abstract class TimeWidget extends AppWidgetProvider {
         return remoteViews;
     }
 
-    private RemoteViews setupKeyguardWidgetIntents(Context context, int appWidgetId) {
+    @NonNull
+    private RemoteViews setupKeyguardWidgetIntents(@NonNull Context context, int appWidgetId) {
         int layoutId = getKeyguardLayoutId();
         return setupWidgetBase(context, appWidgetId, layoutId);
     }
 
-    private RemoteViews setupHomescreenWidgetIntents(Context context, int appWidgetId) {
+    @NonNull
+    private RemoteViews setupHomescreenWidgetIntents(@NonNull Context context, int appWidgetId) {
         int layoutId = getHomescreenLayoutId();
         return setupWidgetBase(context, appWidgetId, layoutId);
     }
@@ -138,7 +143,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
     }
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(@NonNull Context context, @NonNull Intent intent) {
         String action = intent.getAction();
         Log.d("widget", "intent received: " + action);
         if (action == null) { return; }
@@ -189,7 +194,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
         super.onReceive(context, intent);
     }
 
-    private void updateWidget(Context context, AppWidgetManager manager, int appWidgetId, int activeTier) {
+    private void updateWidget(@NonNull Context context, @NonNull AppWidgetManager manager, int appWidgetId, int activeTier) {
         RemoteViews remoteViews = setupWidget(context, manager, appWidgetId);
         String time = setText(remoteViews, context, activeTier);
         setContentDescription(context, remoteViews, time);
@@ -197,19 +202,19 @@ public abstract class TimeWidget extends AppWidgetProvider {
     }
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
-    private void setContentDescription(Context context, RemoteViews remoteViews, String time) {
+    private void setContentDescription(@NonNull Context context, @NonNull RemoteViews remoteViews, String time) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) { // 15
             remoteViews.setContentDescription(R.id.button_prev, time + context.getString(R.string.btn_desc_less_precise));
             remoteViews.setContentDescription(R.id.button_next, time + context.getString(R.string.btn_desc_more_precise));
         }
     }
 
-    private int[] getAppWidgetIds(Context context, AppWidgetManager manager) {
+    private int[] getAppWidgetIds(@NonNull Context context, @NonNull AppWidgetManager manager) {
         ComponentName widget = new ComponentName(context, this.getClass());
         return manager.getAppWidgetIds(widget);
     }
 
-    protected int getActiveTier(Context context, int appWidgetId) {
+    private int getActiveTier(@NonNull Context context, int appWidgetId) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(ACTIVE_TIERS_PREFERENCE, MODE_PRIVATE);
         int min = 0;
         int max = getMaxTier();
@@ -218,7 +223,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
         return tier;
     }
 
-    private void updateTier(Context context, int appWidgetId, int delta, AppWidgetManager manager) {
+    private void updateTier(@NonNull Context context, int appWidgetId, int delta, @NonNull AppWidgetManager manager) {
         d("updateTier: " + delta);
         SharedPreferences sharedPreferences = context.getSharedPreferences(ACTIVE_TIERS_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -226,11 +231,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
         int newActiveTier = getActiveTier(context, appWidgetId) + delta;
         if (newActiveTier >= 0 && newActiveTier <= maxTier) {
             editor.putInt(String.valueOf(appWidgetId), newActiveTier);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
-                editor.apply();
-            } else {
-                editor.commit();
-            }
+            editor.apply();
             updateWidget(context, manager, appWidgetId, newActiveTier);
         }
     }

@@ -22,7 +22,7 @@ public class Tier3Test extends TierTestCase {
     }
 
     @Test
-    public void testGetApproxTime() throws Exception {
+    public void testGetApproxTime() {
         String expected = "Patek";
         String actual = instance.getApproxTime(c, res);
         assertEquals(expected, actual);

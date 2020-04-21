@@ -1,6 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import java.util.Calendar;
 
@@ -26,8 +27,9 @@ public class Tier2 implements ITier {
             R.string.undecember
     };
 
+    @NonNull
     @Override
-    public String getApproxTime(Calendar c, Resources res) {
+    public String getApproxTime(@NonNull Calendar c, @NonNull Resources res) {
         int month = c.get(Calendar.MONTH);
         return res.getString(arr[month]);
     }

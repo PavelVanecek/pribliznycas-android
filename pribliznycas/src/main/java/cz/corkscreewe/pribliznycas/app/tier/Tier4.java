@@ -1,6 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import java.util.Calendar;
 
@@ -11,8 +12,9 @@ import cz.corkscreewe.pribliznycas.app.R;
  */
 public class Tier4 implements ITier {
 
+    @NonNull
     @Override
-    public String getApproxTime(Calendar c, Resources res) {
+    public String getApproxTime(@NonNull Calendar c, @NonNull Resources res) {
         int hours = c.get(Calendar.HOUR_OF_DAY);
         if (6 <= hours && hours < 9) {
             return res.getString(R.string.morning);

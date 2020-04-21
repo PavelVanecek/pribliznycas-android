@@ -1,6 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.tier;
 
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 
 import java.util.Calendar;
 
@@ -39,8 +40,9 @@ public class Tier5 implements ITier {
             R.string.midnight
     };
 
+    @NonNull
     @Override
-    public String getApproxTime(Calendar c, Resources res) {
+    public String getApproxTime(@NonNull Calendar c, @NonNull Resources res) {
         int hours = c.get(Calendar.HOUR_OF_DAY);
         int minutes = c.get(Calendar.MINUTE);
         if (minutes > 45) {

@@ -11,11 +11,13 @@
         android:weightSum="1">
         <Button
             android:id="@+id/button_prev"
-            style="@style/LeftButton" />
+            style="@style/LeftButton"
+            />
 
         <Button
             android:id="@+id/button_next"
-            style="@style/RightButton" />
+            style="@style/RightButton"
+            />
         </LinearLayout>
 
     <TextView

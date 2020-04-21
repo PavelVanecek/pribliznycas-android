@@ -2,6 +2,7 @@ package cz.corkscreewe.pribliznycas.app.widget;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -36,7 +37,7 @@ public class SingleTimeWidget extends TimeWidget {
     };
 
     @Override
-    protected String setText(RemoteViews remoteViews, Context context, int activeTier) {
+    protected String setText(@NonNull RemoteViews remoteViews, @NonNull Context context, int activeTier) {
         Calendar c = new GregorianCalendar();
         Resources res = context.getResources();
         String time = tiers[activeTier].getApproxTime(c, res);
