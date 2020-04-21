@@ -27,7 +27,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_margin="8dp"
-        android:alpha="1"
         android:contentDescription="@string/app_name"
         android:enabled="false"
         android:gravity="top|center_horizontal"

@@ -226,7 +226,11 @@ public abstract class TimeWidget extends AppWidgetProvider {
         int newActiveTier = getActiveTier(context, appWidgetId) + delta;
         if (newActiveTier >= 0 && newActiveTier <= maxTier) {
             editor.putInt(String.valueOf(appWidgetId), newActiveTier);
-            editor.apply();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                editor.apply();
+            } else {
+                editor.commit();
+            }
             updateWidget(context, manager, appWidgetId, newActiveTier);
         }
     }

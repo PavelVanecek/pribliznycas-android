@@ -17,8 +17,6 @@ public class Tier6Test extends TierTestCase {
     public void setUp() {
         super.setUp();
         instance = new Tier6();
-        when(res.getString(R.string.half))
-                .thenReturn("Pul");
         when(res.getString(R.string.almost_half))
                 .thenReturn("Bude pul");
     }

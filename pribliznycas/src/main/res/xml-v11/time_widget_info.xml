@@ -5,7 +5,6 @@
     android:updatePeriodMillis="86400000"
     android:previewImage="@drawable/example_appwidget_preview"
     android:initialLayout="@layout/single_time_widget"
-    android:resizeMode="vertical|horizontal"
     >
     <!--android:configure="cz.corkscreewe.pribliznycas.app.TimeWidgetConfiguration"-->
 </appwidget-provider>
