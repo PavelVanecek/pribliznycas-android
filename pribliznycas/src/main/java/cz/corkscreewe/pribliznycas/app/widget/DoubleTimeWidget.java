@@ -1,10 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.widget;
 
-import android.appwidget.AppWidgetManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -12,7 +9,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import cz.corkscreewe.pribliznycas.app.R;
-import cz.corkscreewe.pribliznycas.app.service.DoubleTimeHelper;
 import cz.corkscreewe.pribliznycas.app.tier.DoubleTier;
 import cz.corkscreewe.pribliznycas.app.tier.IDoubleTier;
 import cz.corkscreewe.pribliznycas.app.tier.Tier0;
@@ -41,19 +37,6 @@ public class DoubleTimeWidget extends TimeWidget {
     };
 
     @Override
-    protected String setText(RemoteViews remoteViews, Bundle intentExtras) {
-        String[] times = intentExtras.getStringArray(DoubleTimeHelper.DOUBLE_TIME_EXTRA);
-        if (times != null && times.length == 2) {
-            Log.i("double widget", times[0] + ", " + times[1]);
-            remoteViews.setTextViewText(R.id.double_appwidget_text_up, times[0]);
-            remoteViews.setTextViewText(R.id.double_appwidget_text_bottom, times[1]);
-            return times[0] + " " + times[1];
-        } else {
-            return null;
-        }
-    }
-
-    @Override
     protected String setText(RemoteViews remoteViews, Context context, int activeTier) {
         Calendar c = new GregorianCalendar();
         Resources res = context.getResources();
@@ -76,15 +59,6 @@ public class DoubleTimeWidget extends TimeWidget {
     @Override
     protected int getKeyguardLayoutId() {
         return R.layout.double_time_widget_keyguard;
-    }
-
-    @Override
-    protected Intent getServiceIntent(Context context, int appWidgetId) {
-        Intent intent;
-        intent = new Intent(context, DoubleTimeHelper.class);
-        Log.d("double time widget", "DoubleTimeHelper intent created");
-        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-        return intent;
     }
 
     @Override

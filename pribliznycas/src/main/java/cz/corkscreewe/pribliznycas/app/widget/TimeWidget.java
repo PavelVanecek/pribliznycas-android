@@ -1,7 +1,6 @@
 package cz.corkscreewe.pribliznycas.app.widget;
 
 import android.annotation.TargetApi;
-import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -17,7 +16,6 @@ import android.util.Log;
 import android.widget.RemoteViews;
 
 import cz.corkscreewe.pribliznycas.app.R;
-import cz.corkscreewe.pribliznycas.app.service.TimeHelper;
 
 import static android.appwidget.AppWidgetManager.ACTION_APPWIDGET_UPDATE;
 import static android.content.Context.MODE_PRIVATE;
@@ -27,15 +25,11 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public abstract class TimeWidget extends AppWidgetProvider {
 
-    protected abstract String setText(RemoteViews remoteViews, Bundle intentExtras);
-
     protected abstract String setText(RemoteViews remoteViews, Context context, int activeTier);
 
     protected abstract int getHomescreenLayoutId();
 
     protected abstract int getKeyguardLayoutId();
-
-    protected abstract Intent getServiceIntent(Context context, int appWidgetId);
 
     protected abstract int getDefaultTier();
 
@@ -47,8 +41,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-//        startServices(context, appWidgetIds);
-
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_TIME_TICK);
         intentFilter.addAction(Intent.ACTION_TIME_CHANGED);
@@ -78,19 +70,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
     }
 
-    private PendingIntent getAlarmPendingIntent(Context context) {
-        Intent intent = getServiceIntent(context, AppWidgetManager.INVALID_APPWIDGET_ID);
-        return PendingIntent.getService(context, 0, intent, 0);
-    }
-
-    private void startServices(Context context, int[] appWidgetIds) {
-//        for (int appWidgetId : appWidgetIds) {
-//            Intent intent = getServiceIntent(context, appWidgetId);
-//            Log.d("widget", "starting service");
-//            context.startService(intent);
-//        }
-    }
-
     private RemoteViews setupWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
         // it might happen that the widget is running on keyguard screen
         boolean isKeyguard = isKeyguard(appWidgetManager, appWidgetId);
@@ -117,10 +96,9 @@ public abstract class TimeWidget extends AppWidgetProvider {
     }
 
     private RemoteViews setupWidgetBase(Context context, int appWidgetId, int templateId) {
-//        Log.d("widget", "setupWidgetBase");
+        Log.d("widget", "setupWidgetBase");
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), templateId);
 
-//        Intent nextIntent = getServiceIntent(context, appWidgetId);
         Intent nextIntent = new Intent(context, getClass());
         nextIntent.setAction(ACTION_TIER_CHANGE_CLICK_UP);
         nextIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
@@ -144,31 +122,18 @@ public abstract class TimeWidget extends AppWidgetProvider {
 
     private RemoteViews setupHomescreenWidgetIntents(Context context, int appWidgetId) {
         int layoutId = getHomescreenLayoutId();
-        RemoteViews remoteViews = setupWidgetBase(context, appWidgetId, layoutId);
-        return remoteViews;
+        return setupWidgetBase(context, appWidgetId, layoutId);
     }
 
     @Override
     public void onEnabled(Context context) {
         super.onEnabled(context);
         Log.d("widget", "onEnabled");
-        AppWidgetManager manager = AppWidgetManager.getInstance(context);
-        int[] appWidgetIds = getAppWidgetIds(context, manager);
-        startServices(context, appWidgetIds);
     }
 
     @Override
     public void onDisabled(Context context) {
         Log.d("widget", "onDisabled");
-        AppWidgetManager manager = AppWidgetManager.getInstance(context);
-        int[] appWidgetIds = getAppWidgetIds(context, manager);
-
-        // last widget has been removed, cancel the alarmManager
-        if (appWidgetIds.length == 0) {
-            PendingIntent timeServicePendingIntent = getAlarmPendingIntent(context);
-            AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-            alarmManager.cancel(timeServicePendingIntent);
-        }
         super.onDisabled(context);
     }
 
@@ -176,60 +141,42 @@ public abstract class TimeWidget extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         Log.d("widget", "intent received: " + action);
+        if (action == null) { return; }
+        AppWidgetManager manager = AppWidgetManager.getInstance(context);
 
         switch (action) {
             case ACTION_TIER_CHANGE_CLICK_UP: {
                 Bundle extras = intent.getExtras();
-                int intentWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-                updateTier(context, intentWidgetId, +1);
+                if (extras != null) {
+                    int intentWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+                    updateTier(context, intentWidgetId, +1, manager);
+                }
                 break;
             }
             case ACTION_TIER_CHANGE_CLICK_DOWN: {
                 Bundle extras = intent.getExtras();
-                int intentWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-                updateTier(context, intentWidgetId, -1);
+                if (extras != null) {
+                    int intentWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+                    updateTier(context, intentWidgetId, -1, manager);
+                }
                 break;
             }
             case ACTION_APPWIDGET_UPDATE: {
                 Bundle extras = intent.getExtras();
-                int intentWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-                d("ACTION_APPWIDGET_UPDATE: " + intentWidgetId);
-                updateWidget(context, AppWidgetManager.getInstance(context), intentWidgetId, getActiveTier(context, intentWidgetId));
+                if (extras != null) {
+                    int intentWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+                    d("ACTION_APPWIDGET_UPDATE: " + intentWidgetId);
+                    updateWidget(context, manager, intentWidgetId, getActiveTier(context, intentWidgetId));
+                }
                 break;
             }
             default: {
                 Bundle extras = intent.getExtras();
                 Log.d("widget", "extras:" + extras);
                 if (extras != null) {
-                    AppWidgetManager manager = AppWidgetManager.getInstance(context);
-                    int[] appWidgetIds = getAppWidgetIds(context, manager);
-
                     int intentWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-                    for (int appWidgetId : appWidgetIds) {
-                        if (
-                                intentWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID ||
-                                        intentWidgetId == appWidgetId
-                        ) {
-                            RemoteViews remoteViews = setupWidget(context, manager, appWidgetId);
-                            String time = setText(remoteViews, extras);
-                            setContentDescription(context, remoteViews, time);
-                            // this will read aloud every update every minute;
-//                        AccessibilityManager accessibilityManager = (AccessibilityManager) context.getSystemService(Context.ACCESSIBILITY_SERVICE);
-//                        if (accessibilityManager.isEnabled()) {
-//                            Log.d("a11y", "firing TYPE_ANNOUNCEMENT event, including source");
-//                            AccessibilityEvent accessibilityEvent = AccessibilityEvent.obtain();
-//                            accessibilityEvent.setEventType(AccessibilityEvent.TYPE_ANNOUNCEMENT);
-//                            accessibilityEvent.setPackageName(context.getPackageName());
-//                            accessibilityEvent.setClassName(context.getClass().getName());
-//                            accessibilityEvent.getText().add(time);
-//                            accessibilityManager.sendAccessibilityEvent(accessibilityEvent);
-//                            Toast.makeText(context, time, Toast.LENGTH_SHORT).show();
-//                        }
-                            manager.updateAppWidget(appWidgetId, remoteViews);
-                        }
-                    }
+                    updateWidget(context, manager, intentWidgetId, getActiveTier(context, intentWidgetId));
                 } else {
-                    AppWidgetManager manager = AppWidgetManager.getInstance(context);
                     int[] appWidgetIds = getAppWidgetIds(context, manager);
 
                     for (int appWidgetId : appWidgetIds) {
@@ -239,22 +186,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
                 }
             }
         }
-
-        // intent from service = redraw widgets
-//        if (true || TimeHelper.ACTION_TIME_CHANGE.equals(action)) {
-//
-//        }
-
-//        if (
-//                Intent.ACTION_BOOT_COMPLETED.equals(action) ||
-//                Intent.ACTION_TIME_TICK.equals(action) ||
-//                Intent.ACTION_TIME_CHANGED.equals(action) ||
-//                Intent.ACTION_TIMEZONE_CHANGED.equals(action)
-//                ) {
-//            AppWidgetManager manager = AppWidgetManager.getInstance(context);
-//            int[] appWidgetIds = getAppWidgetIds(context, manager);
-//            startServices(context, appWidgetIds);
-//        }
         super.onReceive(context, intent);
     }
 
@@ -287,7 +218,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
         return tier;
     }
 
-    private void updateTier(Context context, int appWidgetId, int delta) {
+    private void updateTier(Context context, int appWidgetId, int delta, AppWidgetManager manager) {
         d("updateTier: " + delta);
         SharedPreferences sharedPreferences = context.getSharedPreferences(ACTIVE_TIERS_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -296,7 +227,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
         if (newActiveTier >= 0 && newActiveTier <= maxTier) {
             editor.putInt(String.valueOf(appWidgetId), newActiveTier);
             editor.apply();
-            AppWidgetManager manager = AppWidgetManager.getInstance(context);
             updateWidget(context, manager, appWidgetId, newActiveTier);
         }
     }

@@ -1,10 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.widget;
 
-import android.appwidget.AppWidgetManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -12,7 +9,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import cz.corkscreewe.pribliznycas.app.R;
-import cz.corkscreewe.pribliznycas.app.service.SingleTimeHelper;
 import cz.corkscreewe.pribliznycas.app.tier.ITier;
 import cz.corkscreewe.pribliznycas.app.tier.Tier0;
 import cz.corkscreewe.pribliznycas.app.tier.Tier1;
@@ -40,16 +36,6 @@ public class SingleTimeWidget extends TimeWidget {
     };
 
     @Override
-    protected String setText(RemoteViews remoteViews, Bundle intentExtras) {
-        String time = intentExtras.getString("time");
-        if (time != null) {
-            Log.i("single widget", time);
-            remoteViews.setTextViewText(R.id.appwidget_text, time);
-        }
-        return time;
-    }
-
-    @Override
     protected String setText(RemoteViews remoteViews, Context context, int activeTier) {
         Calendar c = new GregorianCalendar();
         Resources res = context.getResources();
@@ -69,15 +55,6 @@ public class SingleTimeWidget extends TimeWidget {
     @Override
     protected int getKeyguardLayoutId() {
         return R.layout.time_widget_keyguard;
-    }
-
-    @Override
-    protected Intent getServiceIntent(Context context, int appWidgetId) {
-        Intent intent;
-        intent = new Intent(context, SingleTimeHelper.class);
-        Log.d("single time widget", "SingleTimeHelper intent created");
-        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-        return intent;
     }
 
     @Override
