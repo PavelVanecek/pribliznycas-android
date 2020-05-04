@@ -1,10 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
-
     <style name="KeyguardDoubleLayout">
         <item name="android:orientation">vertical</item>
         <item name="android:layout_width">fill_parent</item>

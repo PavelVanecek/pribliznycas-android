@@ -1,7 +1,7 @@
 package cz.corkscreewe.pribliznycas.app.helpers;
 
 import android.content.res.Resources;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import cz.corkscreewe.pribliznycas.app.R;
 

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/github-pribliznycas-android.iml" filepath="$PROJECT_DIR$/github-pribliznycas-android.iml" group="pribliznycas-android" />
-      <module fileurl="file://$PROJECT_DIR$/pribliznycas/pribliznycas.iml" filepath="$PROJECT_DIR$/pribliznycas/pribliznycas.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pribliznycas-android.iml" filepath="$PROJECT_DIR$/pribliznycas-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pribliznycas/pribliznycas-android-pribliznycas.iml" filepath="$PROJECT_DIR$/pribliznycas/pribliznycas-android-pribliznycas.iml" group="pribliznycas-android/pribliznycas" />
+      <module fileurl="file://$PROJECT_DIR$/pribliznycas/pribliznycas.iml" filepath="$PROJECT_DIR$/pribliznycas/pribliznycas.iml" group="pribliznycas-android/pribliznycas" />
+      <module fileurl="file://$PROJECT_DIR$/pribliznycas-android.iml" filepath="$PROJECT_DIR$/pribliznycas-android.iml" group="pribliznycas-android" />
     </modules>
   </component>
 </project>

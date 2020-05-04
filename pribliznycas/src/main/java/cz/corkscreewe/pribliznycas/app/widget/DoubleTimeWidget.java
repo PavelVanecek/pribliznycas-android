@@ -2,8 +2,8 @@ package cz.corkscreewe.pribliznycas.app.widget;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.widget.RemoteViews;
 
