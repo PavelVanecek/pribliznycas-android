@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include
+        domain="sharedpref"
+        path="cz.corkscreewe.pribliznycas.ACTIVE_TIERS_PREFERENCE.xml" />
+</full-backup-content>
