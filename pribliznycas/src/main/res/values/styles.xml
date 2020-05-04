@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -34,15 +34,14 @@
     </style>
 
     <style name="BasicText" parent="@android:style/TextAppearance">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:layout_margin">8dp</item>
-        <item name="android:contentDescription">@string/app_name</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:contentDescription">@string/loading_time</item>
         <item name="android:enabled">false</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
-        <item name="android:singleLine">false</item>
         <item name="android:text">@string/loading_time</item>
         <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">35sp</item>
@@ -51,12 +50,10 @@
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
         <item name="android:shadowRadius">3</item>
-        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
     </style>
 
-    <style name="SingleText" parent="BasicText" />
-
-    <style name="KeyguardText" parent="SingleText">
+    <style name="KeyguardText" parent="BasicText">
         <item name="android:textSize">40sp</item>
         <item name="android:layout_weight">1</item>
     </style>
@@ -71,22 +68,16 @@
         <item name="android:gravity">top|center_horizontal</item>
     </style>
 
-    <style name="DoubleText.Up" parent="SingleText">
+    <style name="DoubleText.Up" parent="BasicText">
         <item name="android:layout_alignParentTop">true</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">35dp</item>
         <item name="android:gravity">top|center_horizontal</item>
-        <item name="android:layout_weight">2</item>
-        <item name="android:layout_marginTop">0dp</item>
-        <item name="android:layout_marginBottom">0dp</item>
     </style>
 
-    <style name="DoubleText.Bottom" parent="SingleText">
+    <style name="DoubleText.Bottom" parent="BasicText">
         <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">25dp</item>
         <item name="android:gravity">bottom|center_horizontal</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_marginTop">0dp</item>
-        <item name="android:layout_marginBottom">0dp</item>
     </style>
 
 </resources>

@@ -2,44 +2,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="false"
-    android:padding="@dimen/widget_margin"
-    >
-
+    android:padding="@dimen/widget_margin">
 
     <TextView
         android:id="@+id/double_appwidget_text_up"
         style="@style/DoubleText.Up" />
+
     <TextView
         android:id="@+id/double_appwidget_text_bottom"
-        style="@style/DoubleText.Bottom"
-        />
+        style="@style/DoubleText.Bottom" />
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:weightSum="1">
+        android:layout_height="fill_parent">
+
         <Button
             android:id="@+id/button_prev"
+            style="?android:borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight=".5"
-            android:gravity="center_vertical|left"
             android:clickable="true"
+            android:contentDescription="@string/btn_desc_less_precise"
             android:enabled="true"
-            android:textColor="#CCC"
-            style="?android:borderlessButtonStyle"
-            />
+            android:gravity="center_vertical|left"
+            android:textColor="#CCC" />
 
         <Button
             android:id="@+id/button_next"
+            style="?android:borderlessButtonStyle"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight=".5"
-            android:gravity="center_vertical|right"
             android:clickable="true"
+            android:contentDescription="@string/btn_desc_more_precise"
             android:enabled="true"
-            android:textColor="#CCC"
-            style="?android:borderlessButtonStyle"
-            />
+            android:gravity="center_vertical|right"
+            android:textColor="#CCC" />
     </LinearLayout>
 </RelativeLayout>
