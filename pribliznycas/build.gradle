@@ -6,7 +6,7 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 22
+        versionCode 23
         versionName "1.6.0"
     }
     buildTypes {
@@ -21,7 +21,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             debuggable true
-
         }
     }
     compileOptions {
