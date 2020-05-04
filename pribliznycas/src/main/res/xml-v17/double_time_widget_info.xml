@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:minWidth="250dp"
-    android:minHeight="60dp"
+    android:minHeight="40dp"
     android:updatePeriodMillis="86400000"
     android:previewImage="@drawable/priblizne_dvakrat_cas"
     android:initialLayout="@layout/double_time_widget_buttons"
@@ -9,5 +9,4 @@
     android:widgetCategory="home_screen|keyguard"
     android:initialKeyguardLayout="@layout/double_time_widget_keyguard"
     >
-    <!--android:configure="cz.corkscreewe.pribliznycas.app.TimeWidgetConfiguration"-->
 </appwidget-provider>
