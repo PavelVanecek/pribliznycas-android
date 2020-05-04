@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BasicText" parent="@android:style/TextAppearance">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:contentDescription">@string/loading_time</item>
+        <item name="android:enabled">false</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:text">@string/loading_time</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:shadowColor">#A0000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">3</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:autoSizeTextType">uniform</item>
+    </style>
+
+    <style name="DoubleText.Up" parent="BasicText">
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:textSize">0sp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:gravity">top|center_horizontal</item>
+    </style>
+
+    <style name="DoubleText.Bottom" parent="BasicText">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textSize">0sp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+    </style>
+
+</resources>
