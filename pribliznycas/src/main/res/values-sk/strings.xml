@@ -34,26 +34,30 @@
     <string name="after_quarter_to">bolo trištvrte</string>
     <string name="almost_full">bude celá</string>
     <string name="full">celá</string>
-    <string name="january">január</string>
-    <string name="february">február</string>
-    <string name="march">marec</string>
-    <string name="april">apríl</string>
-    <string name="may">máj</string>
-    <string name="june">jún</string>
-    <string name="july">júl</string>
-    <string name="august">august</string>
-    <string name="september">september</string>
-    <string name="october">október</string>
-    <string name="november">november</string>
-    <string name="december">december</string>
-    <string name="undecember">stále december</string>
-    <string name="monday">pondelok</string>
-    <string name="tuesday">utorok</string>
-    <string name="wednesday">streda</string>
-    <string name="thursday">štvrtok</string>
-    <string name="friday">piatok</string>
-    <string name="saturday">sobota</string>
-    <string name="sunday">nedeľa</string>
+    <string-array name="months">
+        <item>január</item>
+        <item>február</item>
+        <item>marec</item>
+        <item>apríl</item>
+        <item>máj</item>
+        <item>jún</item>
+        <item>júl</item>
+        <item>august</item>
+        <item>september</item>
+        <item>október</item>
+        <item>november</item>
+        <item>december</item>
+        <item>stále december</item>
+    </string-array>
+    <string-array name="daysoftheweek">
+        <item>nedeľa</item>
+        <item>pondelok</item>
+        <item>utorok</item>
+        <item>streda</item>
+        <item>štvrtok</item>
+        <item>piatok</item>
+        <item>sobota</item>
+    </string-array>
     <string name="btn_desc_less_precise">, chcem to menej presne</string>
     <string name="btn_desc_more_precise">, chcem to presnejšie</string>
     <string name="half_to_twelve">dvanástej</string>
@@ -80,25 +84,50 @@
     <string name="soon_hour_few">budú</string>
     <string name="soon_hour_other">bude</string>
     <string name="quarter_to_one">jednu</string>
-    <string name="month_1">prvého</string>
-    <string name="month_2">druhého</string>
-    <string name="month_3">tretieho</string>
-    <string name="month_4">štvrtého</string>
-    <string name="month_5">piateho</string>
-    <string name="month_6">šiesteho</string>
-    <string name="month_7">siedmeho</string>
-    <string name="month_8">ôsmeho</string>
-    <string name="month_9">deviateho</string>
-    <string name="month_10">desiateho</string>
-    <string name="month_11">jedenásteho</string>
-    <string name="month_12">dvanásteho</string>
-    <string name="month_13">trinásteho</string>
-    <string name="month_14">štrnásteho</string>
-    <string name="month_15">pätnásteho</string>
-    <string name="month_16">šestnásteho</string>
-    <string name="month_17">sedemnásteho</string>
-    <string name="month_18">osemnásteho</string>
-    <string name="month_19">devätnásteho</string>
-    <string name="month_20">dvadsiateho</string>
-    <string name="month_30">tridsiateho</string>
+    <string-array name="daysofthemonth">
+        <item>prvého</item>
+        <item>druhého</item>
+        <item>tretieho</item>
+        <item>štvrtého</item>
+        <item>piateho</item>
+        <item>šiesteho</item>
+        <item>siedmeho</item>
+        <item>ôsmeho</item>
+        <item>deviateho</item>
+        <item>desiateho</item>
+        <item>jedenásteho</item>
+        <item>dvanásteho</item>
+        <item>trinásteho</item>
+        <item>štrnásteho</item>
+        <item>pätnásteho</item>
+        <item>šestnásteho</item>
+        <item>sedemnásteho</item>
+        <item>osemnásteho</item>
+        <item>devätnásteho</item>
+        <item>dvadsiateho</item>
+        <item>dvadsiateho prvého</item>
+        <item>dvadsiateho druhého</item>
+        <item>dvadsiateho tretieho</item>
+        <item>dvadsiateho štvrtého</item>
+        <item>dvadsiateho piateho</item>
+        <item>dvadsiateho šiesteho</item>
+        <item>dvadsiateho siedmeho</item>
+        <item>dvadsiateho ôsmeho</item>
+        <item>dvadsiateho deviateho</item>
+        <item>tridsiateho</item>
+        <item>tridsiateho prvého</item>
+    </string-array>
+    <string name="to__one">na jednu</string>
+    <string name="to__two">na dve</string>
+    <string name="to__three">na tri</string>
+    <string name="to__four">na štyri</string>
+    <string name="to__five">na päť</string>
+    <string name="to__six">na šesť</string>
+    <string name="to__seven">na sedem</string>
+    <string name="to__eight">na osem</string>
+    <string name="to__nine">na deväť</string>
+    <string name="to__ten">na desať</string>
+    <string name="to__eleven">na jedenásť</string>
+    <string name="to__midnight">na polnoc</string>
+    <string name="to__noon">na dvanásť</string>
 </resources>

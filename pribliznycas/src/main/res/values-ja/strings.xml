@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">だいたい時間</string>
+    <string name="hours_one">一時</string>
+    <string name="hours_two">二時</string>
+    <string name="hours_three">三時</string>
+    <string name="hours_four">四時</string>
+    <string name="hours_five">五時</string>
+    <string name="hours_six">六時</string>
+    <string name="hours_seven">七時</string>
+    <string name="hours_eight">八時</string>
+    <string name="hours_nine">九時</string>
+    <string name="hours_ten">十時</string>
+    <string name="hours_eleven">十一時</string>
+    <string name="hours_noon">十二時</string>
+    <string name="evening">夕</string>
+    <string name="midnight">深夜</string>
+    <string name="afternoon">午後</string>
+    <string name="lunchtime">昼</string>
+    <string name="beforenoon">午前</string>
+    <string name="night">夜</string>
+    <string name="morning">朝</string>
+    <string-array name="daysoftheweek">
+        <item>日曜日</item>
+        <item>月曜日</item>
+        <item>火曜日</item>
+        <item>水曜日</item>
+        <item>木曜日</item>
+        <item>金曜日</item>
+        <item>土曜日</item>
+    </string-array>
+    <string-array name="months">
+        <item>一月</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>十一月</item>
+        <item>十二月</item>
+        <item>十三月</item>
+    </string-array>
+    <string name="sometimes">ある日</string>
+    <string name="loading_time">時間をお調べしますね</string>
+    <string-array name="daysofthemonth">
+        <item>一日</item>
+        <item>二日</item>
+        <item>三日</item>
+        <item>四日</item>
+        <item>五日</item>
+        <item>六日</item>
+        <item>七日</item>
+        <item>八日</item>
+        <item>九日</item>
+        <item>十日</item>
+        <item>十一日</item>
+        <item>十二日</item>
+        <item>十三日</item>
+        <item>十四日</item>
+        <item>十五日</item>
+        <item>十六日</item>
+        <item>十七日</item>
+        <item>十八日</item>
+        <item>十九日</item>
+        <item>二十日</item>
+        <item>二十一日</item>
+        <item>二十二日</item>
+        <item>二十三日</item>
+        <item>二十四日</item>
+        <item>二十五日</item>
+        <item>二十六日</item>
+        <item>二十七日</item>
+        <item>二十八日</item>
+        <item>二十九日</item>
+        <item>三十日</item>
+        <item>三十一日</item>
+    </string-array>
+    <string name="half">半</string>
+    <string name="almost_half">もうすぐ半</string>
+    <string name="soon_hour_one">もうすぐ</string>
+    <string name="soon_hour_few">もうすぐ</string>
+    <string name="soon_hour_other">もうすぐ</string>
+    <string name="after_half">半過ぎ</string>
+    <string name="full">ちょうど</string>
+    <string name="almost_full">もうすぐ</string>
+    <string name="full_and_a_little">ちょっと過ぎ</string>
+</resources>

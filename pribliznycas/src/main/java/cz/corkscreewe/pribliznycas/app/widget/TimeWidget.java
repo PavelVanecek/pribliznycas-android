@@ -26,6 +26,7 @@ import static android.app.PendingIntent.FLAG_IMMUTABLE;
 import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
 import static android.appwidget.AppWidgetManager.ACTION_APPWIDGET_UPDATE;
 import static android.content.Context.MODE_PRIVATE;
+import static android.content.Intent.ACTION_LOCALE_CHANGED;
 
 /**
  * Implementation of App Widget functionality.
@@ -248,6 +249,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
                 }
                 break;
             }
+            case ACTION_LOCALE_CHANGED:
             case ALARM_TICK:
                 // case Intent.ACTION_TIME_TICK:
             case Intent.ACTION_TIME_CHANGED:

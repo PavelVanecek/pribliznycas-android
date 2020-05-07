@@ -34,26 +34,30 @@
     <string name="after_quarter_to">po tři čtvrtě</string>
     <string name="almost_full">bude celá</string>
     <string name="full">celá</string>
-    <string name="january">leden</string>
-    <string name="february">únor</string>
-    <string name="march">březen</string>
-    <string name="april">duben</string>
-    <string name="may">květen</string>
-    <string name="june">červen</string>
-    <string name="july">červenec</string>
-    <string name="august">srpen</string>
-    <string name="september">září</string>
-    <string name="october">říjen</string>
-    <string name="november">listopad</string>
-    <string name="december">prosinec</string>
-    <string name="undecember">taky prosinec</string>
-    <string name="monday">pondělí</string>
-    <string name="tuesday">úterý</string>
-    <string name="wednesday">středa</string>
-    <string name="thursday">čtvrtek</string>
-    <string name="friday">pátek</string>
-    <string name="saturday">sobota</string>
-    <string name="sunday">neděle</string>
+    <string-array name="months">
+        <item>leden</item>
+        <item>únor</item>
+        <item>březen</item>
+        <item>duben</item>
+        <item>květen</item>
+        <item>červen</item>
+        <item>červenec</item>
+        <item>srpen</item>
+        <item>září</item>
+        <item>říjen</item>
+        <item>listopad</item>
+        <item>prosinec</item>
+        <item>taky prosinec</item>
+    </string-array>
+    <string-array name="daysoftheweek">
+        <item>neděle</item>
+        <item>pondělí</item>
+        <item>úterý</item>
+        <item>středa</item>
+        <item>čtvrtek</item>
+        <item>pátek</item>
+        <item>sobota</item>
+    </string-array>
     <string name="btn_desc_less_precise">, chci to méně přesně</string>
     <string name="btn_desc_more_precise">, chci to přesněji</string>
     <string name="half_to_twelve">dvanácté</string>
@@ -73,32 +77,56 @@
     <string name="it_was_few">byly</string>
     <string name="it_was_other">bylo</string>
     <string name="quarter_">čtvrt</string>
-    <string name="to__">na\u00A0</string>
     <string name="half_to">půl</string>
     <string name="three_quarters_">tři čtvrtě</string>
     <string name="soon_hour_one">bude</string>
     <string name="soon_hour_few">budou</string>
     <string name="soon_hour_other">bude</string>
     <string name="quarter_to_one">jednu</string>
-    <string name="month_1">prvního</string>
-    <string name="month_2">druhého</string>
-    <string name="month_3">třetího</string>
-    <string name="month_4">čtvrtého</string>
-    <string name="month_5">pátého</string>
-    <string name="month_6">šestého</string>
-    <string name="month_7">sedmého</string>
-    <string name="month_8">osmého</string>
-    <string name="month_9">devátého</string>
-    <string name="month_10">desátého</string>
-    <string name="month_11">jedenáctého</string>
-    <string name="month_12">dvanáctého</string>
-    <string name="month_13">třináctého</string>
-    <string name="month_14">čtvrnáctého</string>
-    <string name="month_15">patnáctého</string>
-    <string name="month_16">šestnáctého</string>
-    <string name="month_17">sedmnáctého</string>
-    <string name="month_18">osmnáctého</string>
-    <string name="month_19">devatenáctého</string>
-    <string name="month_20">dvacátého</string>
-    <string name="month_30">třicátého</string>
+    <string-array name="daysofthemonth">
+        <item>prvního</item>
+        <item>druhého</item>
+        <item>třetího</item>
+        <item>čtvrtého</item>
+        <item>pátého</item>
+        <item>šestého</item>
+        <item>sedmého</item>
+        <item>osmého</item>
+        <item>devátého</item>
+        <item>desátého</item>
+        <item>jedenáctého</item>
+        <item>dvanáctého</item>
+        <item>třináctého</item>
+        <item>čtvrnáctého</item>
+        <item>patnáctého</item>
+        <item>šestnáctého</item>
+        <item>sedmnáctého</item>
+        <item>osmnáctého</item>
+        <item>devatenáctého</item>
+        <item>dvacátého</item>
+        <item>dvacátého prvního</item>
+        <item>dvacátého druhého</item>
+        <item>dvacátého třetího</item>
+        <item>dvacátého čtvrtého</item>
+        <item>dvacátého pátého</item>
+        <item>dvacátého šestého</item>
+        <item>dvacátého sedmého</item>
+        <item>dvacátého osmého</item>
+        <item>dvacátého devátého</item>
+        <item>třicátého</item>
+        <item>třicátého prvního</item>
+    </string-array>
+    <string name="to__one">na jednu</string>
+    <string name="to__two">na dvě</string>
+    <string name="to__three">na tři</string>
+    <string name="to__four">na čtyři</string>
+    <string name="to__five">na pět</string>
+    <string name="to__six">na šest</string>
+    <string name="to__seven">na sedm</string>
+    <string name="to__eight">na osm</string>
+    <string name="to__nine">na devět</string>
+    <string name="to__ten">na deset</string>
+    <string name="to__eleven">na jedenáct</string>
+    <string name="to__midnight">na půlnoc</string>
+    <string name="to__noon">na dvanáct</string>
 </resources>

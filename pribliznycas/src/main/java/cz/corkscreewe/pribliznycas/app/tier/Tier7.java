@@ -16,31 +16,31 @@ public class Tier7 implements IDoubleTier {
     private static final int[] hours_str = Tier5.HOURS;
 
     private static final int[] quarter_hours = {
-            R.string.midnight,
-            R.string.quarter_to_one,
-            R.string.hours_two,
-            R.string.hours_three,
-            R.string.hours_four,
-            R.string.hours_five,
-            R.string.hours_six,
-            R.string.hours_seven,
-            R.string.hours_eight,
-            R.string.hours_nine,
-            R.string.hours_ten,
-            R.string.hours_eleven,
-            R.string.hours_noon,
-            R.string.quarter_to_one,
-            R.string.hours_two,
-            R.string.hours_three,
-            R.string.hours_four,
-            R.string.hours_five,
-            R.string.hours_six,
-            R.string.hours_seven,
-            R.string.hours_eight,
-            R.string.hours_nine,
-            R.string.hours_ten,
-            R.string.hours_eleven,
-            R.string.midnight
+            R.string.to__midnight,
+            R.string.to__one,
+            R.string.to__two,
+            R.string.to__three,
+            R.string.to__four,
+            R.string.to__five,
+            R.string.to__six,
+            R.string.to__seven,
+            R.string.to__eight,
+            R.string.to__nine,
+            R.string.to__ten,
+            R.string.to__eleven,
+            R.string.to__noon,
+            R.string.to__one,
+            R.string.to__two,
+            R.string.to__three,
+            R.string.to__four,
+            R.string.to__five,
+            R.string.to__six,
+            R.string.to__seven,
+            R.string.to__eight,
+            R.string.to__nine,
+            R.string.to__ten,
+            R.string.to__eleven,
+            R.string.to__midnight
     };
 
     private static final int[] half_hours = {
@@ -87,7 +87,7 @@ public class Tier7 implements IDoubleTier {
             // "ctvrt na dvanact" versus "bude pulnoc"
             transcriptedHours = (hours % 12) + 1;
             doubleApproxTime[0] = res.getString(R.string.quarter_);
-            doubleApproxTime[1] = res.getString(R.string.to__) + res.getString(quarter_hours[transcriptedHours]);
+            doubleApproxTime[1] = res.getString(quarter_hours[transcriptedHours]);
         } else if (minutes <= 40) {
             doubleApproxTime[0] = res.getString(R.string.half_to);
             doubleApproxTime[1] = res.getString(half_hours[hours + 1]);
@@ -95,7 +95,7 @@ public class Tier7 implements IDoubleTier {
             // "ctvrt na dvanact" versus "bude pulnoc"
             transcriptedHours = (hours % 12) + 1;
             doubleApproxTime[0] = res.getString(R.string.three_quarters_);
-            doubleApproxTime[1] = res.getString(R.string.to__) + res.getString(quarter_hours[transcriptedHours]);
+            doubleApproxTime[1] = res.getString(quarter_hours[transcriptedHours]);
         } else /* if (minutes > 51 && minutes < 8) */ {
             // "ctvrt na dvanact" versus "bude pulnoc"
             transcriptedHours = hours + 1;
