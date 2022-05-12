@@ -121,7 +121,6 @@ public abstract class TimeWidget extends AppWidgetProvider {
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @SuppressWarnings("InlinedApi, NewApi")
     private boolean isKeyguard(@NonNull AppWidgetManager appWidgetManager, int appWidgetId) {
-        boolean isKeyguard = false;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) { // 17
             Bundle appWidgetOptions = appWidgetManager.getAppWidgetOptions(appWidgetId);
             int category = appWidgetOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_HOST_CATEGORY);
