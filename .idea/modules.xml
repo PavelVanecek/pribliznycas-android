@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/pribliznycas-android.iml" filepath="$PROJECT_DIR$/pribliznycas-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/pribliznycas/pribliznycas-android.pribliznycas.iml" filepath="$PROJECT_DIR$/.idea/modules/pribliznycas/pribliznycas-android.pribliznycas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pribliznycas/pribliznycas-android.pribliznycas.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/pribliznycas/pribliznycas-android.pribliznycas.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pribliznycas/pribliznycas-android.pribliznycas.main.iml" filepath="$PROJECT_DIR$/.idea/modules/pribliznycas/pribliznycas-android.pribliznycas.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pribliznycas/pribliznycas-android.pribliznycas.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/pribliznycas/pribliznycas-android.pribliznycas.unitTest.iml" />
     </modules>
   </component>
 </project>
