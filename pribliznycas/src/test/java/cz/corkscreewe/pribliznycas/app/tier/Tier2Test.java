@@ -16,14 +16,14 @@ public class Tier2Test extends TierTestCase {
     @Before
     public void setUp() {
         super.setUp();
+        when(res.getStringArray(R.array.months))
+                .thenReturn(new String[]{"1", "2", "3"});
         instance = new Tier2();
-        when(res.getString(R.string.march))
-                .thenReturn("Brezen");
     }
 
     @Test
     public void testGetApproxTime() {
-        String expected = "Brezen";
+        String expected = "3";
         String actual = instance.getApproxTime(c, res);
         assertEquals(expected, actual);
     }

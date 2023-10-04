@@ -17,13 +17,13 @@ public class Tier3Test extends TierTestCase {
     public void setUp() {
         super.setUp();
         instance = new Tier3();
-        when(res.getString(R.string.friday))
-                .thenReturn("Patek");
+        when(res.getStringArray(R.array.daysoftheweek))
+                .thenReturn(new String[]{"1", "2", "3", "4", "5", "6", "7"});
     }
 
     @Test
     public void testGetApproxTime() {
-        String expected = "Patek";
+        String expected = "6";
         String actual = instance.getApproxTime(c, res);
         assertEquals(expected, actual);
     }

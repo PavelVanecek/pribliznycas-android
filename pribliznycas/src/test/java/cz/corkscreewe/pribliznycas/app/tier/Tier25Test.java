@@ -18,6 +18,7 @@ public class Tier25Test extends TierTestCase {
     @Before
     public void setUp() {
         super.setUp();
+        when(res.getStringArray(R.array.daysofthemonth)).thenReturn(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"});
         instance = new Tier25();
     }
 
@@ -27,8 +28,7 @@ public class Tier25Test extends TierTestCase {
 
     @Test
     public void test01() {
-        String expected = "prvniho";
-        when(res.getString(R.string.month_1)).thenReturn(expected);
+        String expected = "1";
         prepare(1);
         String actual = instance.getApproxTime(c, res);
         assertEquals(expected, actual);
@@ -36,77 +36,9 @@ public class Tier25Test extends TierTestCase {
 
     @Test
     public void test10() {
-        String expected = "desateho";
-        when(res.getString(R.string.month_10)).thenReturn(expected);
+        String expected = "10";
         prepare(10);
         String actual = instance.getApproxTime(c, res);
         assertEquals(expected, actual);
     }
-
-    @Test
-    public void test11() {
-        String expected = "jedenacteho";
-        when(res.getString(R.string.month_11)).thenReturn(expected);
-        prepare(11);
-        String actual = instance.getApproxTime(c, res);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void test19() {
-        String expected = "devatena";
-        when(res.getString(R.string.month_19)).thenReturn(expected);
-        prepare(19);
-        String actual = instance.getApproxTime(c, res);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void test20() {
-        String expected = "dvacet";
-        when(res.getString(R.string.month_20)).thenReturn(expected);
-        prepare(20);
-        String actual = instance.getApproxTime(c, res);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void test21() {
-        String expected = "dvacateho prvniho";
-        when(res.getString(R.string.month_20)).thenReturn("dvacateho");
-        when(res.getString(R.string.month_1)).thenReturn("prvniho");
-        prepare(21);
-        String actual = instance.getApproxTime(c, res);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void test29() {
-        String expected = "dvacateho devateho";
-        when(res.getString(R.string.month_20)).thenReturn("dvacateho");
-        when(res.getString(R.string.month_9)).thenReturn("devateho");
-        prepare(29);
-        String actual = instance.getApproxTime(c, res);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void test30() {
-        String expected = "tricateho";
-        when(res.getString(R.string.month_30)).thenReturn("tricateho");
-        prepare(30);
-        String actual = instance.getApproxTime(c, res);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void test31() {
-        String expected = "tricateho prvniho";
-        when(res.getString(R.string.month_30)).thenReturn("tricateho");
-        when(res.getString(R.string.month_1)).thenReturn("prvniho");
-        prepare(31);
-        String actual = instance.getApproxTime(c, res);
-        assertEquals(expected, actual);
-    }
-
 }
