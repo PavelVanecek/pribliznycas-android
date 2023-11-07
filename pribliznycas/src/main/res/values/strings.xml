@@ -82,7 +82,6 @@
     <string name="soon_hour_one">bude</string>
     <string name="soon_hour_few">budou</string>
     <string name="soon_hour_other">bude</string>
-    <string name="quarter_to_one">jednu</string>
     <string-array name="daysofthemonth">
         <item>prvního</item>
         <item>druhého</item>
