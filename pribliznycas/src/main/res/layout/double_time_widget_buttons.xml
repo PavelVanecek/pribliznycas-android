@@ -23,23 +23,23 @@
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight=".5"
-            android:gravity="center_vertical|left"
+            android:gravity="center_vertical|start"
             android:clickable="true"
             android:enabled="true"
             android:textColor="#CCC"
             style="?android:borderlessButtonStyle"
-            />
+            android:focusable="true" />
 
         <Button
             android:id="@+id/button_next"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight=".5"
-            android:gravity="center_vertical|right"
+            android:gravity="center_vertical|end"
             android:clickable="true"
             android:enabled="true"
             android:textColor="#CCC"
             style="?android:borderlessButtonStyle"
-            />
+            android:focusable="true" />
     </LinearLayout>
 </RelativeLayout>

@@ -299,8 +299,7 @@ public abstract class TimeWidget extends AppWidgetProvider {
         SharedPreferences sharedPreferences = context.getSharedPreferences(ACTIVE_TIERS_PREFERENCE, MODE_PRIVATE);
         int min = 0;
         int max = getMaxTier();
-        int tier = Math.min(max, Math.max(min, sharedPreferences.getInt(String.valueOf(appWidgetId), getDefaultTier())));
-        return tier;
+        return Math.min(max, Math.max(min, sharedPreferences.getInt(String.valueOf(appWidgetId), getDefaultTier())));
     }
 
     private void updateTier(@NonNull Context context, int appWidgetId, int delta, @NonNull AppWidgetManager manager) {

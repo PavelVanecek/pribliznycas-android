@@ -35,8 +35,9 @@
             android:clickable="true"
             android:contentDescription="@string/btn_desc_less_precise"
             android:enabled="true"
-            android:gravity="center_vertical|left"
-            android:textColor="#CCC" />
+            android:gravity="center_vertical|start"
+            android:textColor="#CCC"
+            android:focusable="true" />
 
         <Button
             android:id="@+id/button_next"
@@ -47,7 +48,8 @@
             android:clickable="true"
             android:contentDescription="@string/btn_desc_more_precise"
             android:enabled="true"
-            android:gravity="center_vertical|right"
-            android:textColor="#CCC" />
+            android:gravity="center_vertical|end"
+            android:textColor="#CCC"
+            android:focusable="true" />
     </LinearLayout>
 </RelativeLayout>

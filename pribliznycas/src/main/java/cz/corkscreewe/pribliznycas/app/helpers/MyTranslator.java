@@ -33,8 +33,6 @@ public class MyTranslator {
     /**
      * Because I want to force Czech grammar rules in default locale.
      * Blame me
-     * @param hours
-     * @return
      */
     @NonNull
     public static String getHoursSoon(@NonNull Resources res, int hours) {
@@ -54,12 +52,6 @@ public class MyTranslator {
         return res.getString(resourceId);
     }
 
-    /**
-     *
-     * @param res
-     * @param hours
-     * @return
-     */
     @NonNull
     public static String getHoursItWas(@NonNull Resources res, int hours) {
         OPTS decision = decide(hours);
