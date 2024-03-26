@@ -28,7 +28,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     namespace 'cz.corkscreewe.pribliznycas.app'
-    lintOptions {
+    lint {
         disable 'MissingTranslation'
     }
 }
